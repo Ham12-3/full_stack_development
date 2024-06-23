@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nested HTML Table</title>
+    </head>
+
+    <body>
+        <!-- Nested HTML Table  -->
+        <h1>Nested HTML Table</h1>
+        <table>
+            <table>
+                <table>
+                    <caption>
+                        Employees Information
+                    </caption>
+                    <!-- Table Head  -->
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Department</th>
+                    </tr>
+                    <!-- Table Data  -->
+                    <tr>
+                        <td>John Smith</td>
+                        <td>28</td>
+                        <td>Male</td>
+                        <!-- Nested  -->
+                        <td>
+                            <table>
+                                <!-- nested table head  -->
+                                <tr>
+                                    <th>Department Name</th>
+                                    <th>Manager</th>
+                                    <th> Sales</th>
+                                </tr>
+                                <!-- nested table data  -->
+                                <tr>
+                                    <td>
+                                        Sales
+                                    </td>
+                                    <td>Emma</td>
+                                    <td>$2000</td>
+                                </tr>
+                                <tr>
+                                    <td>IT</td>
+                                    <td>Ben</td>
+                                    <td>$8000</td>
+                                </tr>
+                            </table>
+                        </td>
+
+                    </tr>
+                </table>
+            </table>
+        </table>
+    </body>
+
+</html>
