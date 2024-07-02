@@ -1,0 +1,12 @@
+/* base styles  */
+
+.box {
+    width: 100%;
+    height: 200px;
+}
+
+@media screen and (orientation: landscape) {
+    .box {
+        background-color: red;
+    }
+}
