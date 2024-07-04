@@ -327,3 +327,69 @@ const undefinedValue = undefined;
 const strUndefined = String(undefinedValue);
 
 console.log(typeof strUndefined);
+
+// Converting string to numbers
+
+// COnverting pixel value to umber with a parseInt( ) function
+
+const pixelValue = "42px";
+
+console.log(typeof pixelValue);
+
+const numValue = parseInt(pixelValue);
+
+console.log(typeof numValue);
+
+// converting dimension string to number
+
+const dimensionStr = "42.5em";
+
+console.log(typeof dimensionStr);
+
+const dimensionNum = parseFloat(dimensionStr);
+
+console.log(typeof dimensionNum);
+
+// COnverting age input to number using number( ) function
+
+const ageInput = "30";
+
+const convertedAge = Number(ageInput);
+
+// Quick Conversion using the unary operator
+
+const scoreStr = "42";
+
+const scoreNum = +scoreStr;
+
+// Converting boolean to number
+
+const boolValue = true;
+
+const numBool = +boolValue;
+
+// Converting String to Boolean
+
+const usernameInput = "Thomas";
+
+const convertedVal = Boolean(usernameInput);
+
+console.log("====================================");
+console.log(convertedVal);
+console.log("====================================");
+
+// Using Boolean() with empty string
+
+const emptyField = "";
+
+const emptyFieldBool = Boolean(emptyField);
+
+console.log(emptyFieldBool);
+
+console.log("====================================");
+
+// Using Double Negation
+
+const emailInput = "emma@gmail.com";
+
+const convertedVal1 = !!emailInput;
