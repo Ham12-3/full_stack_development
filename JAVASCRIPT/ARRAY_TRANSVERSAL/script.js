@@ -122,3 +122,38 @@ const mixedArr2 = [
 const filteredArr = mixedArr2.filter(Boolean);
 
 console.log(filteredArr); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+// The reduce() method executes a reducer function (that you provide) on each element of the array, resulting in a single output value.
+
+// Using reduce to sum up the elements of an array
+
+const numbers3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const sum1 = numbers3.reduce(function (accumulator, currentValue) {
+  return accumulator + currentValue;
+}, 0);
+
+console.log(sum1); // 55
+
+// Using reduce to find the maximum value in an array
+
+const max = numbers3.reduce(function (accumulator, currentValue) {
+  return Math.max(accumulator, currentValue);
+}, 0);
+
+console.log(max); // 10
+
+// Using reduce to count the freuqency of elements in an array
+
+const fruits1 = ["apple", "banana", "mango", "apple", "banana", "apple"];
+
+const count = fruits1.reduce(function (accumulator, currentValue) {
+  if (currentValue in accumulator) {
+    accumulator[currentValue]++;
+  } else {
+    accumulator[currentValue] = 1;
+  }
+  return accumulator;
+}, {});
+
+console.log(count); // { apple: 3, banana: 2, mango: 1 }
