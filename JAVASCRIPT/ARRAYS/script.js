@@ -107,3 +107,11 @@ console.log(animals); // ["Tiger", "Elephant"]s
 const colors = ["Red", "Green", "Blue", "Yellow"];
 
 console.log(colors.length); // 4
+
+// Modify the length of an array
+
+const colors1 = ["Red", "Green", "Blue", "Yellow"];
+
+colors.length = 2;
+
+console.log(colors); // ["Red", "Green"]
