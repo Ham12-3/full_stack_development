@@ -157,3 +157,38 @@ const count = fruits1.reduce(function (accumulator, currentValue) {
 }, {});
 
 console.log(count); // { apple: 3, banana: 2, mango: 1 }
+
+// Multi dimensional arrays
+
+// Creating a 2D Array
+
+const matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+
+// Grab the firs index
+
+console.log(matrix[0]); // [1, 2, 3]
+
+// Grab the first element of the first index
+
+console.log(matrix[0][0]); // 1
+
+// Creating a 3D array
+
+const the3DArray = [
+  [
+    [1, 2],
+    [3, 4],
+  ],
+  [
+    [5, 6],
+    [7, 8],
+  ],
+];
+
+// Access the first of first of first index
+
+console.log(the3DArray[0][0][0]); // 1
