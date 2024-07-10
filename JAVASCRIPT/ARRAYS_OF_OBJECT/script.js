@@ -374,3 +374,38 @@ const patientWithHeadache = patients.find((patient)=> {
 })
 
 console.log(patientWithHeadache) // {id:1, name:"Alice", ailment:"headache"}
+
+
+// Search and filter using some()  method 
+
+const patient2 =[
+    {id:1, name:"Alice", ailment:"headache"},
+    {id:2, name:"Bob", ailment:"fever"},
+    {id:3, name:"Charlie", ailment:"headache"},
+    {id:4, name:"David", ailment:"cough"},
+    {id:5, name:"Eve", ailment:"headache"}
+]
+
+// Patient with headache 
+
+const patientWithCold2 = patients2.some((patient)=> { patient.ailment === "headache"})
+
+console.log(patientWithCold2) // true
+
+// Search and filter using every 
+
+const studentsArr2 =[
+    {id:1, name:"Alice", grade:"A"},
+    {id:2, name:"Bob", grade:"B"},
+    {id:3, name:"Charlie", grade:"C"},
+    {id:4, name:"David", grade:"D"},
+    {id:5, name:"Eve", grade:"E"}
+,
+    {id:6, name:"Frank", grade:"F"},
+]
+
+const allPassed = studentsArr2.every((student)=> {
+    return student.grade !== "F"
+})
+
+console.log(allPassed) // false
