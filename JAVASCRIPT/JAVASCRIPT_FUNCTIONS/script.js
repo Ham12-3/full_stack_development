@@ -218,3 +218,134 @@ const getUser =() => {
 
 
 console.log(getUser()); // {name: "Masynctech", age: 10}
+
+
+// Let and Const 
+
+// Hoisting 
+
+function hostingIssue() {
+  console.log(a) // undefined
+  var a= 10
+  console.log(a);
+}
+
+function hostingIssue1() {
+  console.log(a) // ReferenceError: Cannot access 'a' before initialization
+  let a= 10
+  console.log(a);
+}
+
+function hostingIssue2() {
+  console.log(a) // ReferenceError: Cannot access 'a' before initialization
+  const a= 10
+  console.log(a);
+}
+
+// Using Var 
+
+for(var i=0; i<5; i++) {
+  console.log(i);
+}  
+console.log(i); // 5
+
+// Using let 
+
+for(let i=0; i<5; i++) {
+
+  console.log(i);
+}
+
+console.log(i); // ReferenceError: i is not defined
+
+// Immutability 
+
+// Using var and let 
+
+var x = 10;
+
+x=20;
+
+console.log(x); // 20
+
+let y = 10;
+
+y=20;
+
+console.log(y); // 20
+
+const z = 10;
+
+z=20;
+
+console.log(z); // TypeError: Assignment to constant variable.
+
+
+
+// Destrcuturing in JavaScript ES6 
+
+const numbers =[1,2,3,4,5];
+
+const [first, second, third, fourth, fifth] = numbers;
+
+console.log(first); // 1
+
+console.log(second); // 2
+
+console.log(third); // 3
+
+console.log(fourth); // 4
+
+console.log(fifth); // 5
+
+// Swap variables
+
+let a = 1
+
+let b=2
+
+[a,b] = [b,a]
+
+console.log(a); // 2
+
+console.log(b); // 1
+
+const user ={name:"Masynctech", age: 10, email:"support@masynctech.com"};
+
+console.log(user.name); // Masynctech
+
+
+const {name, age, email} = user;
+
+console.log(name); // Masynctech
+
+console.log(age); // 10
+
+console.log(email); //
+
+// Destructuring in fucntion paramters 
+
+
+function greet(userObj ) {
+console.log(`Hello ${userObj.name}, you are ${userObj.age} years old`);
+}
+
+
+const myUser = {name:"John", age: 30};
+
+greet(myUser); // Hello John, you are 30 years old
+
+// Nested Destructuring 
+
+const userData ={
+id:1,
+info:{
+  name1:"Masynctech",
+  age1: 10
+}
+
+}
+
+console.log(userData.info.name); // Masynctech
+
+const {info:{name1, age1}} = userData;
