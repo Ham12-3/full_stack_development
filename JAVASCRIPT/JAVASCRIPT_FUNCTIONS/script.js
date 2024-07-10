@@ -349,3 +349,7 @@ info:{
 console.log(userData.info.name); // Masynctech
 
 const {info:{name1, age1}} = userData;
+
+
+// Javascript array of objects 
+
