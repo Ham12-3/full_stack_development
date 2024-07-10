@@ -171,3 +171,50 @@ function outerFunction() {
 
 outerFunction(); // Hello World
 
+// Arrow function 
+
+
+const sayHello1 =() => {
+  console.log("Hello");
+}
+
+sayHello1(); // Hello 
+// Block Body Syntax 
+
+const greet =(name) => {
+  return `Hello ${name}`;
+}
+
+const greetFn = greet("John");
+
+console.log(greetFn); // Hello John
+
+// SIngle Parameter, No parentheses 
+
+
+
+const square =(x) => x*x;
+
+const squareFn = square(5);
+
+console.log(squareFn); // 25
+
+
+// No paramters
+
+const random =() => Math.random();
+
+console.log(random()); // 0.123456789
+
+// Object Literal Return 
+
+const getUser =() => {
+  return {
+    name:"Masynctech",
+    age: 10
+  }
+}
+
+
+
+console.log(getUser()); // {name: "Masynctech", age: 10}
