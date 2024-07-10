@@ -126,3 +126,48 @@ const multiply = function(num1, num2 = 10) {
 }
 
 multiply(5); // 50
+
+
+// return statement in a function 
+
+const add = function(a,b) {
+  const result = a + b;
+  return result;
+  console.log("This is the end of the function"); // This line will not be executed
+}
+
+const addResult = add(10, 20);  // 30
+
+// Return statement with conditionals 
+
+function isEven(num) {
+  if(num%2===0) {
+    return "It is an even number"
+  } else {
+    return "It is an odd number"
+  }
+}
+
+console.log(isEven(10)); // It is an even number
+
+// local variable in function 
+
+function showLocalVariable() {
+  const message = "Hello World";
+  console.log(message);
+}
+
+console.log(message); // ReferenceError: message is not defined
+
+// Variable in outer function 
+
+function outerFunction() {
+  const message = "Hello World";
+  function innerFunction() {
+    console.log(message);
+  }
+  innerFunction();
+}
+
+outerFunction(); // Hello World
+
