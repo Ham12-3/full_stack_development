@@ -192,74 +192,185 @@ const shoppingCart = [
   { name: "Monitor", price: 200 },
 ];
 
-// Add 10% discount 
+// Add 10% discount
 
-const discountedCart =shoppingCart.map((product)=> {
-    return {
-        name: product.name,
-        price: product.price * 0.9
-    }
-})
+const discountedCart = shoppingCart.map((product) => {
+  return {
+    name: product.name,
+    price: product.price * 0.9,
+  };
+});
 
 console.log(discountedCart);
 
-// get all the product names only 
+// get all the product names only
 
-const productNamesOnly = shoppingCart.map((product)=> {
-    return {
-        name: product.name  
-    }
-})
+const productNamesOnly = shoppingCart.map((product) => {
+  return {
+    name: product.name,
+  };
+});
 
 console.log(productNamesOnly);
 
-// Filtering active users 
+// Filtering active users
 
-const users =[
-{
-    id:1,
-    isActive:false,
-    name:"Bob"
-},
+const users = [
+  {
+    id: 1,
+    isActive: false,
+    name: "Bob",
+  },
 
+  {
+    id: 2,
+    isActive: true,
+    name: "Alice",
+  },
 
+  {
+    id: 3,
+    isActive: true,
+    name: "Charlie",
+  },
 
-{
-    id:2,
-    isActive:true,
-    name:"Alice"
-},
+  {
+    id: 4,
+    isActive: false,
+    name: "David",
+  },
+];
 
-{
-    id:3,
-    isActive:true,
-    name:"Charlie"
-},
-
-{
-    id:4,
-    isActive:false,
-    name:"David"
-}
-
-]
-
-const activeUsers = users.filter((user)=> user.isActive);
+const activeUsers = users.filter((user) => user.isActive);
 
 console.log(activeUsers); // [{id:2, isActive:true, name:"Alice"}, {id:3, isActive:true, name:"Charlie"}]
 
-const transactions =[
-    {id:1, amount:100},
-    {id:2, amount:200},
-    {id:3, amount:300},
-    {id:4, amount:400},
-    {id:5, amount:500}
-]
-// Filter out all amount above 100 
+const transactions = [
+  { id: 1, amount: 100 },
+  { id: 2, amount: 200 },
+  { id: 3, amount: 300 },
+  { id: 4, amount: 400 },
+  { id: 5, amount: 500 },
+];
+// Filter out all amount above 100
 
 const largeTransactions = transactoins.filter(
-    (transaction)=> transaction.amount > 100
-)
+  (transaction) => transaction.amount > 100
+);
 
 console.log(largeTransactions); // [{id:2, amount:200}, {id:3, amount:300}, {id:4, amount:400}, {id:5, amount:500}]
 
+// Transformation and manipulation of data using splice() method
+
+// Remove inactive users from the users array
+
+const usersArr = [
+  { id: 1, isActive: false, name: "Bob" },
+  { id: 2, isActive: true, name: "Alice" },
+  { id: 3, isActive: true, name: "Charlie" },
+  { id: 4, isActive: false, name: "David" },
+];
+
+// Find the index of the user to be removed
+
+const indexToRemove = usersArr.findIndex(
+  (user) => user.id === 1 && user.isActive === false
+);
+
+// use splice
+if (indexToRemove !== -1) {
+  usersArr.splice(indexToRemove, 1);
+} else {
+  console.log("User not found");
+}
+
+console.log(usersArr); // [{id:2, isActive:true, name:"Alice"}, {id:3, isActive:true, name:"Charlie"}, {id:4, isActive:false, name:"David"}]
+
+// Managing playlists in a music app
+
+
+const playlist = [
+    {id:"s1", title:"Song 1", artist: "Artist A"}
+    ,{id:"s2", title:"Song 2", artist: "Artist B"}
+    ,{id:"s3", title:"Song 3", artist: "Artist C"}
+
+
+    ,{id:"s4", title:"Song 4", artist: "Artist D"}
+]
+
+// Remove song of id s1 
+const songIndexToRemove = playlist.findIndex((song)=> {
+    return song.id === "s1"
+})
+
+console.log(songIndexToRemove) // 0
+
+// Using splice 
+
+if(songIndexToRemove !== -1){ 
+    playlist.splice(songIndexToRemove, 1)
+} else {
+    console.log("Song not found")
+}
+console.log(playlist) // [{id:"s2", title:"Song 2", artist: "Artist B"}, {id:"s3", title:"Song 3", artist: "Artist C"}, {id:"s4", title:"Song 4", artist: "Artist D"}]
+
+// Move a song of id s1 to third position 
+
+const indexToMove = playlist.findIndex((song)=> {
+    return song.id === "s1"
+})
+if(indexToMove !== -1){
+   const [songToMove] = playlist.splice(indexToMove, 1);
+   playlist.splice(2, 0, songToMove)
+} 
+
+// insert new song 
+
+const newSong = {id:"s5", title:"Song 5", artist: "Artist E"}
+playlist.splice(1, 0, newSong)
+
+// Object.assign method 
+
+// updating tproperties of students in a class 
+
+const studentsArr =[
+    {id:1, name:"Alice", age:20},
+    {id:2, name:"Bob", age:25},
+    {id:3, name:"Charlie", age:30},
+    {id:4, name:"David", age:35},
+    {id:5, name:"Eve", age:40}
+]
+
+// Grade updates 
+
+const gradeUpdates =[
+    { grade:"A"},
+    { grade:"B"},
+    { grade:"C"},
+    { grade:"D"},
+    { grade:"E"}
+]
+
+// Update the students 
+
+const updatedStudents = studentArr.map((student,index)=> {
+    return Object.assign({}, student, gradeUpdates[index])
+})
+// Search and filter using find( ) method
+
+// Finding the first patient with a specific ailment in a hospital database 
+const patients = [
+    {id:1, name:"Alice", ailment:"headache"},
+    {id:2, name:"Bob", ailment:"fever"},
+    {id:3, name:"Charlie", ailment:"headache"},
+    {id:4, name:"David", ailment:"cough"},
+    {id:5, name:"Eve", ailment:"headache"}
+]
+
+// paitent with headache 
+
+const patientWithHeadache = patients.find((patient)=> {
+    return patient.ailment === "headache"
+})
+
+console.log(patientWithHeadache) // {id:1, name:"Alice", ailment:"headache"}
