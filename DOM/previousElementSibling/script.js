@@ -12,3 +12,4 @@ console.log(previousFruitEl)  // <li id="banana">Banana</li>
 const nextFruitEl = cherryEl.nextElementSibling;
 
 console.log(nextFruitEl)  // <li id="date">Date</li>
+
