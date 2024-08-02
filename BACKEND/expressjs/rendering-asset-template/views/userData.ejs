@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>paasing data from server to client</h1>
+
+    <!-- Accessing data from the server  -->
+
+    <h1>
+        Welcome, 
+        <%=username%>
+       
+    </h1>
+    <p>
+        Email: 
+        <%=email%>
+    </p>
+    <p>Age: <%=age%></p>
+    <% console.log("this is from EJS ") %>
+<% if(isPremiumUser){ %>
+    <p>You are a premium user</p>
+<% }else{ %>
+    <p>You are not a premium user</p>
+<% } %>
+<%= (isLogin) ? "You are logged in" : "You are not logged in" %>
+
+</body>
+</html>
