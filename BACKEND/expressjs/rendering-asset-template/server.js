@@ -1,3 +1,4 @@
+const { privateDecrypt } = require('crypto');
 const express = require('express');
 
 const path =require('path');
@@ -57,6 +58,31 @@ app.get("/users", (req,res)=> {
   
  }
     res.render("userData.ejs", userData)
+})
+
+// Render product page / route 
+
+app.get("/products", (req,res)=> {
+
+  const products =[
+    {
+
+      name:"Laptop",
+      price:1000,
+      description:"This is a laptop"
+    },
+    {
+      name:"Phone",
+      price:500,
+      description:"This is a phone"
+    },
+    {
+      name:"Tablet",
+      price:700,
+      description:"This is a tablet"
+    }
+  ]
+  res.render("product.ejs", {products})
 })
 
 // Start the server 
