@@ -1,6 +1,6 @@
 const { privateDecrypt } = require('crypto');
 const express = require('express');
-
+const ejsLayout = require('express-ejs-layouts');
 const path =require('path');
 
 const app = express();
@@ -9,10 +9,17 @@ const PORT =8082
 
 // Serve the static files/folder 
 
+
+
 app.use(express.static(path.join(__dirname,"public"))) 
 
+// Plugin the ejs layout as a middleware 
 
 
+app.use(ejsLayout);
+
+
+app.set('layout',"layout/main-layout")
 // Set the EJS as our template engine 
 
 app.set('view engine','ejs');
@@ -84,7 +91,16 @@ app.get("/products", (req,res)=> {
   ]
   res.render("product.ejs", {products})
 })
+//404 Error handler
+app.use((req, res, next) => {
+  const error = new Error("Page Not Found");
 
+  next(error);
+});
+app.use((err, req, res, next) => {
+  console.log(err.message);
+  res.render("error", { error: err.message });
+});
 // Start the server 
 
 app.listen(PORT, console.log(`Server is running on port ${PORT}`));
