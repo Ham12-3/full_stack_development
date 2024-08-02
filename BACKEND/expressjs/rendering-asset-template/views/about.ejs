@@ -1,22 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us</title>
-    <link rel="stylesheet" href="/css/about.css" />
-  </head>
+<%- include("partials/header", {title: "About Us"}) %>
 
-  <body>
-    <header></header>
-    <header>
-      <h1>About Us</h1>
-      <nav>
-        <a href="/gallery">Gallery</a>
-        <a href="/about">About Us</a>
-        <a href="/contact">Contact</a>
-      </nav>
-    </header>
     <div class="section">
       <h2>Who We Are</h2>
       <p>
@@ -61,5 +44,7 @@
         <p><strong>Address:</strong> 123 Main Street, City, Country</p>
       </div>
     </div>
-  </body>
-</html>
+<%- include("partials/footer") %>
+
+  
+</body>
