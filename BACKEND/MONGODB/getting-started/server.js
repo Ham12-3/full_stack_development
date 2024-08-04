@@ -68,10 +68,53 @@ const connectDb = async () => {
     // console.log(results)
 
     // Using the findOne() method
-    const result = await students.findOne({
-      age: 23,
-    });
-    console.log(result);
+    //     const result = await students.findOne({
+    //       age: 23,
+    //     });
+    //     console.log(result);
+
+    // Update the document with Agnes name
+
+    // updateOne() method
+
+    // const results = await students.updateOne(
+    //   {
+    //     name: "Agnes",
+    //   },
+    //   {
+    //     $set: {
+    //       age: 25,
+    //     },
+    //   }
+    // );
+
+    // updateMany() method
+
+    // const results = await students.updateMany(
+    //   {
+    //     age: 24,
+    //   },
+    //   {
+    //     $set: {
+    //       age: 26,
+    //     },
+    //   }
+    // );
+
+    // FindOne and Update method
+
+    const results = await students.findOneAndUpdate(
+      {
+        name: "Agnes",
+      },
+      {
+        $set: {
+          age: 27,
+        },
+      }
+    );
+
+    console.log(results);
   } catch (error) {
     console.error("Error connecting to MongoDB", error);
   }
