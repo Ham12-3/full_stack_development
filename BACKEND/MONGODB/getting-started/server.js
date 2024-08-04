@@ -103,17 +103,19 @@ const connectDb = async () => {
 
     // FindOne and Update method
 
-    const results = await students.findOneAndUpdate(
-      {
-        name: "Agnes",
-      },
-      {
-        $set: {
-          age: 27,
-        },
-      }
-    );
-
+    // const results = await students.findOneAndUpdate(
+    //   {
+    //     name: "Agnes",
+    //   },
+    //   {
+    //     $set: {
+    //       age: 27,
+    //     },
+    //   }
+    // );
+    const results = await students.deleteOne({
+      name: "Agnes",
+    });
     console.log(results);
   } catch (error) {
     console.error("Error connecting to MongoDB", error);
