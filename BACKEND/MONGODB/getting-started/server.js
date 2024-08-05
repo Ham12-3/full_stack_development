@@ -113,8 +113,14 @@ const connectDb = async () => {
     //     },
     //   }
     // );
-    const results = await students.deleteOne({
-      name: "Agnes",
+    // const results = await students.deleteOne({
+    //   name: "Agnes",
+    // });
+
+    // DeletMany
+
+    const results = await students.deleteMany({
+      age: 26,
     });
     console.log(results);
   } catch (error) {
