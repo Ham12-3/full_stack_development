@@ -454,6 +454,100 @@
          p.section-paragraph {
             color: #555;
          }
+
+         /* Add or update these responsive styles in your <style> section */
+
+         /* Tablet and Mobile Responsive Styles */
+         @media (max-width: 1024px) {
+
+            /* Main content adjustments */
+            .container {
+               padding: 0 1.5rem;
+            }
+
+            h2 {
+               font-size: 2rem;
+               /* 32px */
+            }
+
+            .section-title {
+               font-size: 1.75rem;
+               /* 28px */
+            }
+         }
+
+         @media (max-width: 768px) {
+
+            /* Header and navigation adjustments */
+            .pt-32 {
+               padding-top: 5rem;
+               /* Reduced top padding on mobile */
+            }
+
+            /* Card adjustments */
+            .card {
+               padding: 1.5rem;
+            }
+
+            /* Text size adjustments */
+            h2 {
+               font-size: 1.75rem;
+               /* 28px */
+               margin-bottom: 1rem;
+            }
+
+            .section-title {
+               font-size: 1.5rem;
+               /* 24px */
+            }
+
+            p.section-paragraph {
+               font-size: 1rem;
+               /* 16px */
+               line-height: 1.6;
+            }
+
+            /* List adjustments */
+            .list-disc {
+               padding-left: 1rem;
+            }
+         }
+
+         @media (max-width: 640px) {
+
+            /* Small mobile adjustments */
+            .container {
+               padding: 0 1rem;
+            }
+
+            /* Footer adjustments */
+            .grid-cols-1 {
+               gap: 2rem;
+            }
+
+            /* Social icons spacing */
+            .space-x-4>*+* {
+               margin-left: 0.75rem;
+            }
+         }
+
+         /* General responsive improvements */
+         .card {
+            height: auto;
+            min-height: auto;
+         }
+
+         /* Improved list readability on mobile */
+         .list-disc li {
+            margin-bottom: 0.75rem;
+         }
+
+         /* Better touch targets for mobile */
+         nav ul li a,
+         .footer a {
+            padding: 0.75rem;
+            display: inline-block;
+         }
       </style>
    </head>
 
@@ -511,18 +605,21 @@
       </header>
 
       <!-- Main Content -->
-      <main class="pt-32 pb-12 bg-white text-black">
-         <div class="container mx-auto max-w-7xl px-4">
-            <h2 class="text-4xl font-bold mb-8">Portfolio & Expertise</h2>
-            <p class="text-lg text-gray-700 mb-12">
-               Explore our portfolio to discover a selection of projects that demonstrate our expertise in
-               telecom, IT, and digital transformation.
-            </p>
+      <main class="pt-24 md:pt-32 pb-12 bg-white text-black">
+         <div class="container mx-auto max-w-7xl px-4 md:px-6">
+            <!-- Update section spacing -->
+            <section class="mb-8 md:mb-12">
+               <h2 class="text-3xl md:text-4xl font-bold mb-4 md:mb-8">Portfolio & Expertise</h2>
+               <p class="text-base md:text-lg text-gray-700 mb-8 md:mb-12">
+                  Explore our portfolio to discover a selection of projects that demonstrate our expertise in
+                  telecom, IT, and digital transformation.
+               </p>
+            </section>
 
             <!-- About Me Section -->
-            <section>
-               <h3 class="text-3xl font-bold mb-4 section-title">About Me</h3>
-               <div class="card p-8">
+            <section class="mb-8 md:mb-12">
+               <h3 class="text-2xl md:text-3xl font-bold mb-4 section-title">About Me</h3>
+               <div class="card p-4 md:p-8">
                   <p class="mb-4 section-paragraph">
                      I am equipped with a diverse set of technical, business, and entrepreneurial skills essential for
                      navigating and thriving in the 21st-century digital economy. My expertise enables me to effectively
@@ -608,10 +705,10 @@
          </div>
       </main>
 
-      <footer class="bg-[#dd4219] text-white py-12">
-         <div class="container mx-auto max-w-7xl px-4">
+      <footer class="bg-[#dd4219] text-white py-8 md:py-12">
+         <div class="container mx-auto max-w-7xl px-4 md:px-6">
             <!-- Main Footer Content -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-6 md:mb-8">
                <!-- Company Info -->
                <div>
                   <h3 class="text-xl font-bold mb-4">About Us</h3>

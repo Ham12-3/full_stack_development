@@ -14,30 +14,27 @@
       <style>
          .feature-card,
          .card {
-            padding: 2.5rem;
-            /* 40px padding all around */
-            border-radius: 16px;
+            padding: 1.5rem;
+            border-radius: 12px;
+            min-height: auto;
+            gap: 1rem;
+            height: 100%;
             position: relative;
-            min-height: 300px;
             display: flex;
             flex-direction: column;
             transition: transform 0.3s ease;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             background: white;
-            gap: 1.5rem;
-            /* Space between elements */
          }
 
          .card__description {
-            font-size: 16px;
+            font-size: 0.95rem;
             line-height: 1.6;
             color: #555;
-            margin-bottom: 1.5rem;
-            /* 24px bottom margin */
+            margin-bottom: 1rem;
             flex-grow: 1;
             font-weight: 500;
             padding: 0 0.5rem;
-            /* 8px horizontal padding */
          }
 
          .card__link {
@@ -45,34 +42,30 @@
             align-items: center;
             text-decoration: none;
             font-weight: 700;
-            font-size: 16px;
+            font-size: 0.875rem;
             margin-top: auto;
-            padding: 0.5rem;
-            /* 8px padding all around */
+            padding: 0.5rem 0;
          }
 
          .card__icon {
-            width: 64px;
-            height: 64px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
-            /* 24px bottom margin */
-            font-size: 24px;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
             padding: 1rem;
-            /* 16px padding for icon */
          }
 
          .card__title {
-            font-size: 24px;
+            font-size: 1.25rem;
             font-weight: 700;
-            margin-bottom: 1.25rem;
-            /* 20px bottom margin */
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
             color: #111;
             padding: 0 0.5rem;
-            /* 8px horizontal padding */
          }
 
          .highlight {
@@ -178,23 +171,11 @@
 
          .feature-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem;
+            margin: 1.5rem auto;
             max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-         }
-
-         .feature-card {
-            padding: 24px;
-            /* Reduced padding */
-            border-radius: 16px;
-            position: relative;
-            min-height: 250px;
-            /* Reduced height */
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease;
          }
 
          .card--move {
@@ -221,54 +202,23 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 24px;
-         }
-
-         .feature-cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            /* Changed from 4 to 3 columns */
-            gap: 24px;
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-         }
-
-         .feature-card {
-            padding: 32px;
-            border-radius: 16px;
-            position: relative;
-            min-height: 300px;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            background: white;
-         }
-
-         .card__icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 32px;
-            font-size: 24px;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
          }
 
          .card__title {
-            font-size: 24px;
+            font-size: 1.25rem;
             font-weight: 700;
-            margin-bottom: 24px;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
             color: #111;
          }
 
          .card__description {
-            font-size: 16px;
+            font-size: 0.95rem;
             line-height: 1.6;
             color: #555;
-            margin-bottom: 32px;
+            margin-bottom: 1rem;
             flex-grow: 1;
             font-weight: 500;
          }
@@ -278,9 +228,9 @@
             align-items: center;
             text-decoration: none;
             font-weight: 700;
-            font-size: 16px;
+            font-size: 0.875rem;
             margin-top: auto;
-            padding-top: 16px;
+            padding: 0.5rem 0;
          }
 
          /* Update responsive breakpoints */
@@ -290,14 +240,72 @@
             }
          }
 
-         @media (max-width: 768px) {
+         @media (max-width: 1024px) {
             .feature-cards {
-               grid-template-columns: 1fr;
+               grid-template-columns: repeat(2, 1fr);
+               gap: 1.25rem;
             }
 
-            .feature-card {
-               min-height: 200px;
-               padding: 20px;
+            .card {
+               padding: 1.25rem;
+            }
+         }
+
+         @media (max-width: 768px) {
+            .feature-cards {
+               grid-template-columns: repeat(1, 1fr);
+               padding: 0.75rem;
+            }
+
+            main {
+               padding-top: 5rem;
+            }
+
+            .card {
+               padding: 1.25rem;
+               min-height: auto;
+            }
+
+            h2.text-4xl {
+               font-size: 1.875rem;
+               margin-bottom: 1rem;
+            }
+         }
+
+         @media (max-width: 640px) {
+            .feature-cards {
+               margin: 1rem auto;
+            }
+
+            .card {
+               padding: 1rem;
+            }
+
+            .card__title {
+               font-size: 1.125rem;
+            }
+
+            .card__description {
+               font-size: 0.875rem;
+            }
+
+            .card__link {
+               font-size: 0.875rem;
+            }
+         }
+
+         /* Touch Device Optimization */
+         @media (hover: none) {
+            .card__link {
+               padding: 0.5rem 0;
+            }
+
+            .card:hover {
+               transform: none;
+            }
+
+            .card__link::after {
+               margin-left: 0.5rem;
             }
          }
 
@@ -497,10 +505,12 @@
       </header>
 
       <!-- Main Content -->
-      <main class="pt-24 pb-12 bg-white text-black">
-         <section class="bg-white py-20">
-            <section class="container mx-auto py-20 max-w-7xl">
-               <h2 class="text-4xl font-bold mb-4 text-gray-900">Product and Services</h2>
+      <main class="pt-20 md:pt-24 pb-12 bg-white text-black">
+         <section class="bg-white py-8 md:py-12">
+            <section class="container mx-auto px-4 max-w-7xl">
+               <h2 class="text-3xl md:text-4xl font-bold mb-4 md:mb-8 text-gray-900 px-4">
+                  Products and Services
+               </h2>
                <div class="feature-cards">
 
                   <!-- Card 1 -->

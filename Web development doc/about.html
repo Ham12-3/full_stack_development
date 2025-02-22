@@ -11,6 +11,14 @@
       <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
       <style>
+         /* Organize CSS by components */
+         /* Base Styles */
+         /* Typography */
+         /* Layout */
+         /* Components */
+         /* Utilities */
+         /* Media Queries */
+
          .feature-card,
          .card {
             padding: 2.5rem;
@@ -179,18 +187,6 @@
             padding: 0 20px;
          }
 
-         .feature-card {
-            padding: 32px;
-            border-radius: 16px;
-            position: relative;
-            min-height: 300px;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            background: white;
-         }
-
          .card--move {
             background-color: rgb(255, 245, 245);
          }
@@ -209,13 +205,14 @@
 
          /* Card Icon Colors */
          .card__icon {
-            width: 48px;
-            height: 48px;
+            width: 64px;
+            height: 64px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 24px;
+            margin-bottom: 32px;
+            font-size: 24px;
          }
 
          .feature-cards {
@@ -226,29 +223,6 @@
             max-width: 1200px;
             margin: 40px auto;
             padding: 0 20px;
-         }
-
-         .feature-card {
-            padding: 32px;
-            border-radius: 16px;
-            position: relative;
-            min-height: 300px;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            background: white;
-         }
-
-         .card__icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 32px;
-            font-size: 24px;
          }
 
          .card__title {
@@ -281,6 +255,12 @@
          @media (max-width: 1200px) {
             .feature-cards {
                grid-template-columns: repeat(2, 1fr);
+            }
+         }
+
+         @media (max-width: 1024px) {
+            .container {
+               padding: 0 1.5rem;
             }
          }
 
@@ -438,6 +418,122 @@
             border-radius: 12px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
          }
+
+         /* Update the responsive styles in your <style> section */
+
+         /* Tablet and Mobile Base Styles */
+         @media (max-width: 1024px) {
+            .container {
+               padding: 0 1.5rem;
+            }
+
+            /* Text size adjustments */
+            h2.text-4xl {
+               font-size: 2rem;
+            }
+
+            /* Image grid adjustments */
+            .grid-cols-2 {
+               gap: 1.5rem;
+            }
+         }
+
+         /* Tablet Specific (768px - 1024px) */
+         @media (max-width: 1024px) and (min-width: 768px) {
+            .width-400px {
+               width: 100%;
+               max-width: 350px;
+            }
+
+            .height-300px {
+               height: 250px;
+            }
+
+            /* Stats section */
+            .sm\:gap-10 {
+               gap: 2rem;
+            }
+         }
+
+         /* Mobile Styles */
+         @media (max-width: 767px) {
+
+            /* Main content spacing */
+            .pt-24 {
+               padding-top: 5rem;
+            }
+
+            /* Text alignment */
+            .lg\:text-start {
+               text-align: center;
+            }
+
+            /* Image container */
+            .grid-cols-1 {
+               gap: 1.5rem;
+            }
+
+            /* Image sizes */
+            .width-400px,
+            .height-300px {
+               width: 100%;
+               height: 250px;
+            }
+
+            /* Stats section */
+            .sm\:gap-10 {
+               gap: 1rem;
+            }
+
+            .inline-flex {
+               justify-content: center;
+               flex-wrap: wrap;
+            }
+
+            /* Text sizes */
+            .text-4xl {
+               font-size: 1.875rem;
+            }
+
+            .text-base {
+               font-size: 0.9375rem;
+               line-height: 1.6;
+            }
+
+            /* Button width */
+            .sm\:w-fit {
+               width: 100%;
+               max-width: 300px;
+               margin: 0 auto;
+            }
+         }
+
+         /* Small Mobile Styles */
+         @media (max-width: 640px) {
+            .container {
+               padding: 0 1rem;
+            }
+
+            /* Image adjustments */
+            .pt-24 {
+               padding-top: 0;
+            }
+
+            .grid {
+               gap: 1rem;
+            }
+
+            /* Stats section */
+            .inline-flex {
+               flex-direction: column;
+               align-items: center;
+               gap: 1.5rem;
+            }
+
+            .flex-col {
+               text-align: center;
+            }
+         }
       </style>
    </head>
 
@@ -451,7 +547,7 @@
                   <span class="highlight">Exquisite</span> Bizz Consultancy
                </h1>
             </div>
-            <nav class="hidden md:flex space-x-4">
+            <nav class="hidden md:flex space-x-4" role="navigation" aria-label="Main navigation">
                <ul class="flex space-x-4">
                   <li class="transition"><a href="index.html">Home</a></li>
                   <li class="transition"><a href="about.html">About</a></li>
@@ -505,23 +601,25 @@
             </p>
 
             <!-- Consultancy Service Section -->
-            <section class="py-24 relative">
+            <section class="py-12 md:py-24 relative">
                <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
-                  <div class="w-full justify-start items-center gap-12 grid lg:grid-cols-2 grid-cols-1">
+                  <div class="w-full justify-start items-center gap-8 md:gap-12 grid lg:grid-cols-2 grid-cols-1">
+                     <!-- Image Grid -->
                      <div
-                        class="w-full justify-center items-start gap-6 grid sm:grid-cols-2 grid-cols-1 lg:order-first order-last">
-                        <!-- First image with dimensions -->
-                        <div class="pt-24 lg:justify-center sm:justify-end justify-start items-start gap-2.5 flex">
-                           <img class="rounded-xl object-cover w-[400px] h-[300px]" src="transfer/yinka2.png"
-                              alt="Consultancy Image 1" />
+                        class="w-full justify-center items-start gap-4 md:gap-6 grid sm:grid-cols-2 grid-cols-1 lg:order-first order-last">
+                        <div
+                           class="pt-0 md:pt-24 lg:justify-center sm:justify-end justify-start items-start gap-2.5 flex">
+                           <img class="rounded-xl object-cover w-full md:w-[400px] h-[250px] md:h-[300px]"
+                              src="transfer/yinka2.png" alt="Consultancy Image 1" />
                         </div>
-
-                        <!-- Second image with dimensions -->
-                        <img class="sm:ml-0 ml-auto rounded-xl object-cover w-[400px] h-[300px]"
+                        <img class="rounded-xl object-cover w-full md:w-[400px] h-[250px] md:h-[300px]"
                            src="transfer/yinka4.png" alt="Consultancy Image 2" />
                      </div>
-                     <div class="w-full flex-col justify-center lg:items-start items-center gap-10 inline-flex">
-                        <div class="w-full flex-col justify-center items-start gap-8 flex">
+
+                     <!-- Content Section -->
+                     <div
+                        class="w-full flex-col justify-center lg:items-start items-center gap-6 md:gap-10 inline-flex">
+                        <div class="w-full flex-col justify-center items-start gap-6 md:gap-8 flex">
                            <div class="w-full flex-col justify-start lg:items-start items-center gap-3 flex">
                               <h2
                                  class="text-gray-900 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
@@ -713,18 +811,24 @@
             }
          });
 
-         // Handle scroll events for header effects
+         // Debounce scroll event
+         let scrollTimeout;
          window.addEventListener('scroll', () => {
-            const highlightElements = document.querySelectorAll('.highlight');
-            if (window.scrollY > 0) {
-               header.classList.add('nav-blur');
-               header.classList.remove('nav-initial');
-               highlightElements.forEach(el => el.style.color = '#dd4219');
-            } else {
-               header.classList.remove('nav-blur');
-               header.classList.add('nav-initial');
-               highlightElements.forEach(el => el.style.color = 'white');
+            if (scrollTimeout) {
+               window.cancelAnimationFrame(scrollTimeout);
             }
+            scrollTimeout = window.requestAnimationFrame(() => {
+               const highlightElements = document.querySelectorAll('.highlight');
+               if (window.scrollY > 0) {
+                  header.classList.add('nav-blur');
+                  header.classList.remove('nav-initial');
+                  highlightElements.forEach(el => el.style.color = '#dd4219');
+               } else {
+                  header.classList.remove('nav-blur');
+                  header.classList.add('nav-initial');
+                  highlightElements.forEach(el => el.style.color = 'white');
+               }
+            });
          });
       </script>
    </body>
