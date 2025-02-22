@@ -22,28 +22,52 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
         <style>
             /* Reset nav styles first */
+
+
+            /* Mobile menu styles */
+            #mobile-menu {
+                transition: all 0.3s ease-in-out;
+                backdrop-filter: blur(8px);
+                background-color: rgba(255, 255, 255, 0.95);
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+                max-height: calc(100vh - 80px);
+                overflow-y: auto;
+
+                z-index: 40;
+            }
+
+            /* Mobile menu animation */
+            #mobile-menu.hidden {
+                opacity: 0;
+                transform: translateY(-1rem);
+                pointer-events: none;
+            }
+
+            #mobile-menu:not(.hidden) {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
             nav {
                 transition: all 0.3s ease-in-out;
                 width: 100%;
                 position: fixed;
                 top: 0;
                 left: 0;
+                z-index: 50;
             }
 
             /* Blur state styles */
             .nav-blur {
                 backdrop-filter: blur(5px);
-                background-color: rgba(156, 150, 150, 0.8);
+                background-color: rgba(255, 255, 255, 0.8);
                 margin: 1rem 2rem !important;
-                margin-right: 2rem !important;
-
                 border-radius: 1rem;
                 width: calc(100% - 8rem) !important;
 
                 position: fixed;
                 left: 2rem !important;
                 right: 2rem !important;
-                /* Remove the left: 50% and transform since we're using explicit left/right positioning */
             }
 
             /* Add styles for scrolled nav links */
@@ -95,6 +119,87 @@
             /* Make sure the navigation items are properly spaced */
             nav .flex {
                 justify-content: space-between;
+            }
+
+            /* Responsive container */
+            .container {
+                width: 100%;
+                padding-right: 1rem;
+                padding-left: 1rem;
+                margin-right: auto;
+                margin-left: auto;
+            }
+
+            @media (min-width: 640px) {
+                .container {
+                    max-width: 640px;
+                    padding-right: 2rem;
+                    padding-left: 2rem;
+                }
+            }
+
+            @media (min-width: 768px) {
+                .container {
+                    max-width: 768px;
+                }
+            }
+
+            @media (min-width: 1024px) {
+                .container {
+                    max-width: 1024px;
+                }
+            }
+
+            @media (min-width: 1280px) {
+                .container {
+                    max-width: 1280px;
+                }
+            }
+
+            /* Responsive navigation */
+            .nav-blur {
+                @media (max-width: 1023px) {
+                    margin: 0.5rem 1rem !important;
+                    width: calc(100% - 4rem) !important;
+                    left: 1rem !important;
+                    right: 1rem !important;
+                }
+            }
+
+            /* Responsive text sizes */
+            @media (max-width: 768px) {
+                h1 {
+                    font-size: 2.5rem !important;
+                }
+
+                h2 {
+                    font-size: 2rem !important;
+                }
+
+                h3 {
+                    font-size: 1.5rem !important;
+                }
+            }
+
+            /* Responsive spacing */
+            @media (max-width: 768px) {
+                .py-20 {
+                    padding-top: 3rem;
+                    padding-bottom: 3rem;
+                }
+
+                .gap-12 {
+                    gap: 1.5rem;
+                }
+            }
+
+            /* Responsive images */
+            .object-cover {
+                height: 100%;
+
+                @media (max-width: 768px) {
+                    height: 250px;
+                }
             }
         </style>
     </head>
@@ -166,7 +271,7 @@
                     </div>
 
                     <!-- Mobile Menu Button -->
-                    <button class="lg:hidden text-white">
+                    <button class="lg:hidden text-white p-2" id="mobileMenuBtn" aria-label="Toggle mobile menu">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 6h16M4 12h16M4 18h16" />
@@ -175,6 +280,41 @@
                 </div>
             </div>
         </nav>
+
+        <!-- Add this after your main navigation -->
+        <div id="mobile-menu"
+            class="hidden lg:hidden fixed top-24 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 shadow-lg z-50">
+            <div class="flex flex-col space-y-4">
+                <button
+                    class="flex items-center justify-between w-full px-4 py-2 text-gray-800 hover:text-charity-primary">
+                    <span>About Us</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <button
+                    class="flex items-center justify-between w-full px-4 py-2 text-gray-800 hover:text-charity-primary">
+                    <span>Our Work</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <a href="#" class="px-4 py-2 text-gray-800 hover:text-charity-primary">Impact</a>
+                <button
+                    class="flex items-center justify-between w-full px-4 py-2 text-gray-800 hover:text-charity-primary">
+                    <span>Get Involved</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <div class="pt-4 border-t border-gray-200">
+                    <a href="#"
+                        class="block w-full px-4 py-2 text-center bg-charity-primary text-white rounded-md hover:bg-opacity-90">
+                        Donate
+                    </a>
+                </div>
+            </div>
+        </div>
 
         <!-- Hero Section -->
         <div class="swiper hero-swiper h-screen">
@@ -261,7 +401,7 @@
         <!-- Impact Numbers -->
         <section class="py-20 bg-white">
             <div class="container mx-auto px-4">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
                     <div class="text-center">
                         <h3 class="text-5xl font-bold text-charity-secondary mb-2">5M+</h3>
                         <p class="text-gray-600 text-lg">Lives Impacted</p>
@@ -286,14 +426,14 @@
         <section class="py-20 bg-gray-50">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-center mb-12">Our Initiatives</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     <!-- Initiative Card 1 -->
                     <div class="bg-white rounded-lg overflow-hidden shadow-lg">
                         <div class="relative">
-                            <img src="/placeholder.svg?height=300&width=400" alt="Clean Water Initiative"
-                                class="regular-content w-full h-48 object-cover">
-                            <img src="https://source.unsplash.com/random/400x300/?water" alt="Clean Water Initiative"
-                                class="preview-content hidden w-full h-48 object-cover">
+                            <img src="https://sevansolutions.com/wp-content/uploads/2020/03/The-Water-Project-Featured-Image_Website-1024x936.png"
+                                alt="Clean Water Initiative" class="regular-content w-full h-48 object-cover">
+                            <img src="ttps://sevansolutions.com/wp-content/uploads/2020/03/The-Water-Project-Featured-Image_Website-1024x936.png"
+                                alt="Clean Water Initiative" class="preview-content hidden w-full h-48 object-cover">
                             <div class="absolute top-4 left-4">
                                 <span class="bg-charity-primary text-white px-3 py-1 rounded-full text-sm">Featured
                                     Initiative</span>
@@ -313,10 +453,10 @@
                     <!-- Initiative Card 2 -->
                     <div class="bg-white rounded-lg overflow-hidden shadow-lg">
                         <div class="relative">
-                            <img src="/placeholder.svg?height=300&width=400" alt="Education Support"
+                            <img src="https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Libraries/Production+Library/09-09-2021_UNICEF_Cameroon.jpg/image1170x530cropped.jpg"
                                 class="regular-content w-full h-48 object-cover">
-                            <img src="https://source.unsplash.com/random/400x300/?education" alt="Education Support"
-                                class="preview-content hidden w-full h-48 object-cover">
+                            <img src="https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Libraries/Production+Library/09-09-2021_UNICEF_Cameroon.jpg/image1170x530cropped.jpg"
+                                alt="Education Support" class="preview-content hidden w-full h-48 object-cover">
                         </div>
                         <div class="p-6">
                             <h3 class="text-xl font-bold mb-2">Education Empowerment</h3>
@@ -332,10 +472,10 @@
                     <!-- Initiative Card 3 -->
                     <div class="bg-white rounded-lg overflow-hidden shadow-lg">
                         <div class="relative">
-                            <img src="/placeholder.svg?height=300&width=400" alt="Healthcare Access"
-                                class="regular-content w-full h-48 object-cover">
-                            <img src="https://source.unsplash.com/random/400x300/?healthcare" alt="Healthcare Access"
-                                class="preview-content hidden w-full h-48 object-cover">
+                            <img src="https://www.fairplanet.org/wp-content/uploads/2018/07/health-africa.1530623376.jpg"
+                                alt="Healthcare Access" class="regular-content w-full h-48 object-cover">
+                            <img src="https://www.fairplanet.org/wp-content/uploads/2018/07/health-africa.1530623376.jpg"
+                                alt="Healthcare Access" class="preview-content hidden w-full h-48 object-cover">
                         </div>
                         <div class="p-6">
                             <h3 class="text-xl font-bold mb-2">Healthcare for All</h3>
@@ -356,13 +496,15 @@
         <section class="py-20 bg-white">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-center mb-12">Success Stories</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     <!-- Story Card 1 -->
                     <div class="group">
                         <div class="relative overflow-hidden rounded-lg mb-4">
-                            <img src="/placeholder.svg?height=240&width=360" alt="Success Story"
+                            <img src="https://africanmediaagency.com/wp-content/uploads/2022/10/PepsiCo-Foundations_africanmediagency-1024x519.png"
+                                alt="Success Story"
                                 class="regular-content w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105">
-                            <img src="https://source.unsplash.com/random/360x240/?village" alt="Success Story"
+                            <img src="https://africanmediaagency.com/wp-content/uploads/2022/10/PepsiCo-Foundations_africanmediagency-1024x519.png"
+                                alt="Success Story"
                                 class="preview-content hidden w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105">
                         </div>
                         <div>
@@ -376,9 +518,11 @@
                     <!-- Story Card 2 -->
                     <div class="group">
                         <div class="relative overflow-hidden rounded-lg mb-4">
-                            <img src="/placeholder.svg?height=240&width=360" alt="Success Story"
+                            <img src="https://africanmediaagency.com/wp-content/uploads/2022/10/PepsiCo-Foundations_africanmediagency-1024x519.png"
+                                alt="Success Story"
                                 class="regular-content w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105">
-                            <img src="https://source.unsplash.com/random/360x240/?school" alt="Success Story"
+                            <img src="https://africanmediaagency.com/wp-content/uploads/2022/10/PepsiCo-Foundations_africanmediagency-1024x519.png"
+                                alt="Success Story"
                                 class="preview-content hidden w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105">
                         </div>
                         <div>
@@ -392,9 +536,11 @@
                     <!-- Story Card 3 -->
                     <div class="group">
                         <div class="relative overflow-hidden rounded-lg mb-4">
-                            <img src="/placeholder.svg?height=240&width=360" alt="Success Story"
+                            <img src="https://africanmediaagency.com/wp-content/uploads/2022/10/PepsiCo-Foundations_africanmediagency-1024x519.png"
+                                alt="Success Story"
                                 class="regular-content w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105">
-                            <img src="https://source.unsplash.com/random/360x240/?doctor" alt="Success Story"
+                            <img src="https://africanmediaagency.com/wp-content/uploads/2022/10/PepsiCo-Foundations_africanmediagency-1024x519.png"
+                                alt="Success Story"
                                 class="preview-content hidden w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105">
                         </div>
                         <div>
@@ -413,7 +559,7 @@
         <section class="py-20 bg-gray-50">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-center mb-12">Ways to Support</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     <div class="text-center">
                         <div class="bg-white rounded-full p-8 w-32 h-32 mx-auto mb-6 flex items-center justify-center">
                             <svg class="w-16 h-16 text-charity-primary" fill="none" stroke="currentColor"
@@ -457,11 +603,11 @@
                 <h2 class="text-3xl font-bold mb-6">Stay Connected</h2>
                 <p class="max-w-2xl mx-auto mb-8">Join our community and stay updated on our initiatives, success
                     stories, and ways to get involved.</p>
-                <form class="max-w-md mx-auto flex gap-4">
+                <form class="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
                     <input type="email" placeholder="Enter your email"
-                        class="flex-1 px-4 py-3 rounded-md text-gray-900">
+                        class="flex-1 px-4 py-3 rounded-md text-gray-900 w-full">
                     <button type="submit"
-                        class="px-6 py-3 bg-charity-primary text-white rounded-md hover:bg-opacity-90 transition-colors whitespace-nowrap">
+                        class="px-6 py-3 bg-charity-primary text-white rounded-md hover:bg-opacity-90 transition-colors whitespace-nowrap w-full sm:w-auto">
                         Subscribe
                     </button>
                 </form>
@@ -534,24 +680,14 @@
 
         <!-- Add this script at the bottom of your body tag -->
         <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-        <script>
-            const swiper = new Swiper('.hero-swiper', {
-                loop: true,
-                autoplay: {
-                    delay: 5000, // 5 seconds between slides
-                    disableOnInteraction: false
-                },
-                effect: 'fade', // Smooth fade transition between slides
-                fadeEffect: {
-                    crossFade: true
-                },
-                navigation: false, // Disable navigation buttons
-                pagination: false, // Disable pagination dots
-            });
-        </script>
-        <script>
-            const nav = document.querySelector('nav');
 
+        <script>
+            // DOM Elements
+            const nav = document.querySelector('nav');
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // Scroll handler
             function handleScroll() {
                 if (window.scrollY > 50) {
                     nav.classList.add('nav-blur');
@@ -559,16 +695,64 @@
                 } else {
                     nav.classList.remove('nav-blur');
                     nav.classList.remove('nav-scrolled');
-                    // Reset styles when at top
-                    nav.style.removeProperty('width');
-                    nav.style.removeProperty('left');
-                    nav.style.removeProperty('transform');
                 }
             }
 
+            // Mobile menu toggle
+            function toggleMobileMenu(e) {
+                e.preventDefault();
+                mobileMenu.classList.toggle('hidden');
+
+                // Position the mobile menu below the navbar
+                if (!mobileMenu.classList.contains('hidden')) {
+                    const navHeight = nav.offsetHeight;
+                    mobileMenu.style.top = `${navHeight}px`;
+                }
+            }
+
+            // Event Listeners
             window.addEventListener('scroll', handleScroll);
+
+            // Make sure mobile menu button exists before adding listener
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+            }
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (mobileMenu &&
+                    !mobileMenuBtn?.contains(e.target) &&
+                    !mobileMenu.contains(e.target)) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+
+            // Close menu on resize
+            window.addEventListener('resize', () => {
+                if (window.innerWidth >= 1024 && mobileMenu) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+
+            // Initialize Swiper
+            const swiper = new Swiper('.hero-swiper', {
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false
+                },
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+                navigation: false,
+                pagination: false
+            });
+
+            // Initial calls
             handleScroll();
         </script>
+
 
     </body>
 
