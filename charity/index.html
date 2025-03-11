@@ -201,7 +201,208 @@
                     height: 250px;
                 }
             }
+
+            /* Add these hover animation styles to your existing <style> section */
+
+            /* Card hover animations */
+            .bg-white.rounded-lg {
+                transition: all 0.3s ease-in-out;
+            }
+
+            .bg-white.rounded-lg:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            /* Initiative cards hover effect */
+            .bg-white.rounded-lg.overflow-hidden .relative img {
+                transition: all 0.5s ease;
+            }
+
+            .bg-white.rounded-lg.overflow-hidden:hover .relative img {
+                transform: scale(1.05);
+            }
+
+            /* Success story hover animation */
+            .group .relative.overflow-hidden img {
+                transition: all 0.5s ease;
+            }
+
+            .group:hover .relative.overflow-hidden img {
+                transform: scale(1.05);
+            }
+
+            /* "Get Involved" card animations */
+            #get-involved .bg-white.rounded-lg:hover {
+                border-top: 3px solid #dd4219;
+            }
+
+            #get-involved .bg-white.rounded-lg:hover h3 {
+                color: #dd4219;
+            }
+
+            /* Enhanced button hover animations */
+            .bg-charity-primary {
+                transition: all 0.3s ease;
+            }
+
+            .bg-charity-primary:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(221, 66, 25, 0.4);
+            }
+
+            /* Secondary button hover */
+            .border-gray-300 {
+                transition: all 0.3s ease;
+            }
+
+            .border-gray-300:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                border-color: #dd4219;
+                color: #dd4219;
+            }
+
+            /* Link hover animations */
+            a.text-charity-primary,
+            .text-gray-400 {
+                transition: all 0.2s ease;
+            }
+
+            a.text-charity-primary:hover {
+                transform: translateX(3px);
+            }
+
+            /* Social icon hover animations */
+            footer .flex.space-x-4 a {
+                transition: all 0.3s ease;
+            }
+
+            footer .flex.space-x-4 a:hover {
+                transform: translateY(-3px) scale(1.1);
+            }
+
+            /* Navigation link hover animation */
+            .nav-link,
+            .get-involved-text {
+                transition: all 0.3s ease;
+                position: relative;
+            }
+
+            .nav-link::after,
+            .get-involved-text::after {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 2px;
+                bottom: -4px;
+                left: 0;
+                background-color: #dd4219;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+
+            .nav-link:hover::after,
+            .get-involved-text:hover::after {
+                visibility: visible;
+                width: 100%;
+            }
+
+            /* Image comparison slider */
+            .comparison-slider-wrapper {
+                position: relative;
+                width: 100%;
+                height: 400px;
+                overflow: hidden;
+                border-radius: 0.5rem;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+                margin: 2rem 0;
+            }
+
+            .comparison-slider {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+
+            .before-image,
+            .after-image {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+                background-position: center;
+            }
+
+            .before-image {
+                z-index: 1;
+                clip-path: polygon(0 0, var(--position) 0, var(--position) 100%, 0 100%);
+            }
+
+            .slider-handle {
+                position: absolute;
+                top: 0;
+                left: var(--position);
+                height: 100%;
+                width: 4px;
+                background-color: #dd4219;
+                z-index: 3;
+                cursor: ew-resize;
+                transform: translateX(-2px);
+            }
+
+            .slider-handle:after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-color: #dd4219;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            }
+
+            .slider-handle:before {
+                content: '←→';
+                color: white;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 4;
+                font-weight: bold;
+                font-size: 0.8rem;
+            }
+
+            .slider-labels {
+                position: absolute;
+                bottom: 20px;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                z-index: 4;
+                padding: 0 20px;
+            }
+
+            .slider-label {
+                background-color: rgba(221, 66, 25, 0.9);
+                color: white;
+                padding: 5px 10px;
+                border-radius: 20px;
+                font-size: 14px;
+                font-weight: bold;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            }
         </style>
+        <script src="https://cdn.skypack.dev/@motionone/dom@10.15.5"></script>
     </head>
 
     <body>
@@ -549,24 +750,32 @@
             </div>
         </section>
 
-        <!-- Impact Numbers -->
+        <!-- Impact Numbers with Animation -->
         <section class="py-20 bg-white">
             <div class="container mx-auto px-4">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
                     <div class="text-center">
-                        <h3 class="text-5xl font-bold text-charity-secondary mb-2">5M+</h3>
+                        <h3 class="text-5xl font-bold text-charity-secondary mb-2">
+                            <span class="number-counter" data-target="5" data-suffix="M+">0</span>
+                        </h3>
                         <p class="text-gray-600 text-lg">Lives Impacted</p>
                     </div>
                     <div class="text-center">
-                        <h3 class="text-5xl font-bold text-charity-secondary mb-2">50+</h3>
+                        <h3 class="text-5xl font-bold text-charity-secondary mb-2">
+                            <span class="number-counter" data-target="50" data-suffix="+">0</span>
+                        </h3>
                         <p class="text-gray-600 text-lg">Countries Served</p>
                     </div>
                     <div class="text-center">
-                        <h3 class="text-5xl font-bold text-charity-secondary mb-2">100K+</h3>
+                        <h3 class="text-5xl font-bold text-charity-secondary mb-2">
+                            <span class="number-counter" data-target="100" data-suffix="K+">0</span>
+                        </h3>
                         <p class="text-gray-600 text-lg">Volunteers Worldwide</p>
                     </div>
                     <div class="text-center">
-                        <h3 class="text-5xl font-bold text-charity-secondary mb-2">$100M</h3>
+                        <h3 class="text-5xl font-bold text-charity-secondary mb-2">
+                            $<span class="number-counter" data-target="100" data-suffix="M">0</span>
+                        </h3>
                         <p class="text-gray-600 text-lg">Funds Raised</p>
                     </div>
                 </div>
@@ -668,8 +877,22 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <div>
-                        <img src="https://sevansolutions.com/wp-content/uploads/2020/03/The-Water-Project-Featured-Image_Website-1024x936.png"
-                            alt="Clean Water Impact" class="rounded-lg shadow-lg w-full h-[400px] object-cover">
+                        <!-- Replace the existing Clean Water Impact image with this -->
+                        <div class="comparison-slider-wrapper">
+                            <div class="comparison-slider">
+                                <div class="after-image"
+                                    style="background-image: url('https://sevansolutions.com/wp-content/uploads/2020/03/The-Water-Project-Featured-Image_Website-1024x936.png');">
+                                </div>
+                                <div class="before-image"
+                                    style="background-image: url('https://www.unicef.org/zimbabwe/sites/unicef.org.zimbabwe/files/styles/press_release_feature/public/UNI313402.jpg?itok=f91YB2dH');">
+                                </div>
+                                <div class="slider-handle" role="slider" aria-valuenow="50"></div>
+                            </div>
+                            <div class="slider-labels">
+                                <span class="slider-label">Before</span>
+                                <span class="slider-label">After</span>
+                            </div>
+                        </div>
                     </div>
                     <div>
                         <h3 class="text-2xl font-bold mb-4">Clean Water Impact</h3>
@@ -1176,6 +1399,81 @@
             handleScroll();
         </script>
 
+        <script>
+            // Image comparison slider functionality
+            document.addEventListener('DOMContentLoaded', function () {
+                const sliderWrapper = document.querySelector('.comparison-slider-wrapper');
+                if (!sliderWrapper) return;
+
+                const slider = document.querySelector('.slider-handle');
+                let isActive = false;
+
+                // Set initial position to 50%
+                const initialPosition = 50;
+                slider.style.setProperty('--position', initialPosition + '%');
+                document.querySelector('.before-image').style.setProperty('--position', initialPosition + '%');
+
+                // Mouse events
+                slider.addEventListener('mousedown', () => isActive = true);
+                window.addEventListener('mouseup', () => isActive = false);
+
+                // Touch events
+                slider.addEventListener('touchstart', () => isActive = true);
+                window.addEventListener('touchend', () => isActive = false);
+
+                // Handle slider movement
+                function handleMovement(clientX) {
+                    if (!isActive) return;
+
+                    const rect = sliderWrapper.getBoundingClientRect();
+                    const position = ((clientX - rect.left) / rect.width) * 100;
+
+                    // Restrict movement between 5% and 95%
+                    const clampedPosition = Math.max(5, Math.min(position, 95));
+
+                    // Update positions
+                    slider.style.setProperty('--position', clampedPosition + '%');
+                    document.querySelector('.before-image').style.setProperty('--position', clampedPosition + '%');
+                }
+
+                window.addEventListener('mousemove', e => handleMovement(e.clientX));
+                window.addEventListener('touchmove', e => handleMovement(e.touches[0].clientX));
+
+                // Add entrance animation
+                setTimeout(() => {
+                    slider.style.setProperty('--position', '70%');
+                    document.querySelector('.before-image').style.setProperty('--position', '70%');
+                }, 500);
+            });
+        </script>
+
+        <script>
+            // Animated counter for impact numbers
+            document.addEventListener('DOMContentLoaded', function () {
+                const numberCounters = document.querySelectorAll('.number-counter');
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                            const target = parseFloat(entry.target.getAttribute('data-target'));
+                            const suffix = entry.target.getAttribute('data-suffix') || '';
+                            entry.target.classList.add('animated');
+
+                            Motion.animate(0, target, {
+                                duration: 2,
+                                ease: "circOut",
+                                onUpdate: (latest) => {
+                                    entry.target.textContent = Math.round(latest) + suffix;
+                                }
+                            });
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                numberCounters.forEach(counter => {
+                    observer.observe(counter);
+                });
+            });
+        </script>
 
     </body>
 
