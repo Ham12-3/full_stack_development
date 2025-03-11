@@ -229,41 +229,15 @@
 
                     <!-- Main Menu -->
                     <div class="hidden lg:flex items-center space-x-8">
-                        <div class="group relative">
-                            <button
-                                class="flex items-center space-x-1 text-white nav-link hover:text-charity-primary transition-colors">
-                                <span>About Us</span>
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="group relative">
-                            <button
-                                class="flex items-center space-x-1 text-white nav-link hover:text-charity-primary transition-colors">
-                                <span>Our Work</span>
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
-                            </button>
-                        </div>
-                        <a href="#" class="text-white nav-link hover:text-charity-primary transition-colors">Impact</a>
-                        <div class="group relative">
-                            <button
-                                class="flex items-center space-x-1 text-white get-involved-text hover:text-charity-primary transition-colors">
-                                <span>Get Involved</span>
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
-                            </button>
-                        </div>
-                        <button id="previewToggle"
-                            class="px-4 py-2 bg-charity-secondary text-white rounded-md hover:bg-opacity-90 transition-colors mr-4">
-                            Toggle Preview
-                        </button>
+                        <a href="#about" class="text-white nav-link hover:text-charity-primary transition-colors">About
+                            Us</a>
+                        <a href="#work" class="text-white nav-link hover:text-charity-primary transition-colors">Our
+                            Work</a>
+                        <a href="#impact"
+                            class="text-white nav-link hover:text-charity-primary transition-colors">Impact</a>
+                        <a href="#get-involved"
+                            class="text-white get-involved-text hover:text-charity-primary transition-colors">Get
+                            Involved</a>
                         <a href="#"
                             class="px-6 py-2 bg-charity-primary text-white rounded-md hover:bg-opacity-90 transition-colors">
                             Donate
@@ -285,28 +259,10 @@
         <div id="mobile-menu"
             class="hidden lg:hidden fixed top-24 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 shadow-lg z-50">
             <div class="flex flex-col space-y-4">
-                <button
-                    class="flex items-center justify-between w-full px-4 py-2 text-gray-800 hover:text-charity-primary">
-                    <span>About Us</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </button>
-                <button
-                    class="flex items-center justify-between w-full px-4 py-2 text-gray-800 hover:text-charity-primary">
-                    <span>Our Work</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </button>
-                <a href="#" class="px-4 py-2 text-gray-800 hover:text-charity-primary">Impact</a>
-                <button
-                    class="flex items-center justify-between w-full px-4 py-2 text-gray-800 hover:text-charity-primary">
-                    <span>Get Involved</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </button>
+                <a href="#about" class="px-4 py-2 text-gray-800 hover:text-charity-primary">About Us</a>
+                <a href="#work" class="px-4 py-2 text-gray-800 hover:text-charity-primary">Our Work</a>
+                <a href="#impact" class="px-4 py-2 text-gray-800 hover:text-charity-primary">Impact</a>
+                <a href="#get-involved" class="px-4 py-2 text-gray-800 hover:text-charity-primary">Get Involved</a>
                 <div class="pt-4 border-t border-gray-200">
                     <a href="#"
                         class="block w-full px-4 py-2 text-center bg-charity-primary text-white rounded-md hover:bg-opacity-90">
@@ -398,6 +354,201 @@
             <div class="swiper-pagination"></div>
         </div>
 
+        <!-- Add this after the hero section and before Impact Numbers -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-6">About Global Hope Foundation</h2>
+                    <div class="w-24 h-1 bg-charity-primary mx-auto mb-8"></div>
+                    <p class="text-gray-600 text-lg mb-8">
+                        Global Hope Foundation is a non-profit organization dedicated to creating lasting change in
+                        communities worldwide. Through our initiatives in education, healthcare, and clean water access,
+                        we've impacted millions of lives since our inception.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3"
+                            alt="Our Mission" class="rounded-lg shadow-lg w-full h-[400px] object-cover">
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Our Mission</h3>
+                        <p class="text-gray-600 mb-6">
+                            We believe in creating sustainable solutions that empower communities to thrive. Our
+                            approach combines immediate assistance with long-term development programs to ensure lasting
+                            impact.
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="flex items-center">
+                                <svg class="w-6 h-6 text-charity-primary mr-2" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Sustainable Development</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-6 h-6 text-charity-primary mr-2" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Community Empowerment</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-6 h-6 text-charity-primary mr-2" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Global Partnership</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Work Section -->
+        <section id="work" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center mb-16">
+                    <h2 class="text-3xl font-bold mb-6">Our Work</h2>
+                    <div class="w-24 h-1 bg-charity-primary mx-auto mb-8"></div>
+                    <p class="text-gray-600 text-lg">
+                        Through strategic initiatives and partnerships, we're creating lasting change in communities
+                        worldwide.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Work Category 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="relative h-64">
+                            <img src="https://sevansolutions.com/wp-content/uploads/2020/03/The-Water-Project-Featured-Image_Website-1024x936.png"
+                                alt="Clean Water Projects" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">Clean Water</h3>
+                                <p class="text-sm">50+ Projects Completed</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <ul class="space-y-3">
+                                <li class="flex items-center text-gray-600">
+                                    <svg class="w-5 h-5 mr-2 text-charity-primary" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Well Construction
+                                </li>
+                                <li class="flex items-center text-gray-600">
+                                    <svg class="w-5 h-5 mr-2 text-charity-primary" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Water Filtration Systems
+                                </li>
+                                <li class="flex items-center text-gray-600">
+                                    <svg class="w-5 h-5 mr-2 text-charity-primary" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Community Training
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Work Category 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="relative h-64">
+                            <img src="https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Libraries/Production+Library/09-09-2021_UNICEF_Cameroon.jpg/image1170x530cropped.jpg"
+                                alt="Education Initiatives" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">Education</h3>
+                                <p class="text-sm">100+ Schools Supported</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <ul class="space-y-3">
+                                <li class="flex items-center text-gray-600">
+                                    <svg class="w-5 h-5 mr-2 text-charity-primary" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    School Construction
+                                </li>
+                                <li class="flex items-center text-gray-600">
+                                    <svg class="w-5 h-5 mr-2 text-charity-primary" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Teacher Training
+                                </li>
+                                <li class="flex items-center text-gray-600">
+                                    <svg class="w-5 h-5 mr-2 text-charity-primary" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Student Scholarships
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Work Category 3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="relative h-64">
+                            <img src="https://www.fairplanet.org/wp-content/uploads/2018/07/health-africa.1530623376.jpg"
+                                alt="Healthcare Programs" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">Healthcare</h3>
+                                <p class="text-sm">200K+ Lives Impacted</p>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <ul class="space-y-3">
+                                <li class="flex items-center text-gray-600">
+                                    <svg class="w-5 h-5 mr-2 text-charity-primary" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Mobile Clinics
+                                </li>
+                                <li class="flex items-center text-gray-600">
+                                    <svg class="w-5 h-5 mr-2 text-charity-primary" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Vaccination Programs
+                                </li>
+                                <li class="flex items-center text-gray-600">
+                                    <svg class="w-5 h-5 mr-2 text-charity-primary" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Medical Training
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Impact Numbers -->
         <section class="py-20 bg-white">
             <div class="container mx-auto px-4">
@@ -417,6 +568,142 @@
                     <div class="text-center">
                         <h3 class="text-5xl font-bold text-charity-secondary mb-2">$100M</h3>
                         <p class="text-gray-600 text-lg">Funds Raised</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Impact Section - Add this after the Impact Numbers section -->
+        <section id="impact" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-6">Our Impact</h2>
+                    <div class="w-24 h-1 bg-charity-primary mx-auto mb-8"></div>
+                    <p class="text-gray-600 text-lg">
+                        Through commitment and collaboration, we're creating meaningful change around the world.
+                        Here's how our work is transforming communities.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1604881988758-f76ad2f7aac1?ixlib=rb-4.0.3"
+                            alt="Healthcare Impact" class="rounded-lg shadow-lg w-full h-[400px] object-cover">
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Healthcare Impact</h3>
+                        <p class="text-gray-600 mb-6">
+                            Our healthcare initiatives have reached over 2 million people, providing essential medical
+                            services
+                            through mobile clinics, vaccination programs, and healthcare education.
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-charity-primary mr-2 mt-0.5" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span><strong>200+</strong> Mobile clinics established in remote areas</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-charity-primary mr-2 mt-0.5" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span><strong>500,000+</strong> Children vaccinated against preventable diseases</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-charity-primary mr-2 mt-0.5" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span><strong>1,000+</strong> Medical professionals trained</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+                    <div class="order-2 md:order-1">
+                        <h3 class="text-2xl font-bold mb-4">Education Impact</h3>
+                        <p class="text-gray-600 mb-6">
+                            Our education programs have built schools, provided scholarships, and trained teachers
+                            to ensure quality education for children in underserved communities.
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-charity-primary mr-2 mt-0.5" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span><strong>100+</strong> Schools built or renovated</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-charity-primary mr-2 mt-0.5" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span><strong>50,000+</strong> Students gained access to education</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-charity-primary mr-2 mt-0.5" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span><strong>2,000+</strong> Teachers received professional development</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <img src="https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Libraries/Production+Library/09-09-2021_UNICEF_Cameroon.jpg/image1170x530cropped.jpg"
+                            alt="Education Impact" class="rounded-lg shadow-lg w-full h-[400px] object-cover">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <img src="https://sevansolutions.com/wp-content/uploads/2020/03/The-Water-Project-Featured-Image_Website-1024x936.png"
+                            alt="Clean Water Impact" class="rounded-lg shadow-lg w-full h-[400px] object-cover">
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Clean Water Impact</h3>
+                        <p class="text-gray-600 mb-6">
+                            Our clean water initiatives have transformed communities by providing access to safe
+                            drinking water,
+                            reducing waterborne diseases, and improving overall health.
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-charity-primary mr-2 mt-0.5" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span><strong>500+</strong> Wells and water systems installed</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-charity-primary mr-2 mt-0.5" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span><strong>70%</strong> Reduction in waterborne illnesses</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-charity-primary mr-2 mt-0.5" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span><strong>1.5M+</strong> People with new access to clean water</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -555,43 +842,179 @@
             </div>
         </section>
 
-        <!-- Get Involved -->
-        <section class="py-20 bg-gray-50">
+        <!-- Enhanced Get Involved Section - Replace the "Ways to Support" section -->
+        <section id="get-involved" class="py-20 bg-gray-50">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center mb-12">Ways to Support</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                    <div class="text-center">
-                        <div class="bg-white rounded-full p-8 w-32 h-32 mx-auto mb-6 flex items-center justify-center">
-                            <svg class="w-16 h-16 text-charity-primary" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
+                <div class="max-w-4xl mx-auto text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-6">Get Involved</h2>
+                    <div class="w-24 h-1 bg-charity-primary mx-auto mb-8"></div>
+                    <p class="text-gray-600 text-lg mb-8">
+                        There are many ways to join our mission and help create meaningful change.
+                        Your support, in any form, makes our work possible.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="relative h-56">
+                            <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?ixlib=rb-4.0.3"
+                                alt="Volunteer" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">Volunteer</h3>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">Volunteer</h3>
-                        <p class="text-gray-600">Join our global network of volunteers making a difference.</p>
+                        <div class="p-6">
+                            <p class="text-gray-600 mb-6">Share your time and skills to make a direct impact. Volunteer
+                                opportunities are available both locally and internationally.</p>
+                            <ul class="space-y-3 mb-6">
+                                <li class="flex items-center text-gray-600">
+                                    <svg class="w-5 h-5 mr-2 text-charity-primary" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Field Operations
+                                </li>
+                                <li class="flex items-center text-gray-600">
+                                    <svg class="w-5 h-5 mr-2 text-charity-primary" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Virtual Support
+                                </li>
+                                <li class="flex items-center text-gray-600">
+                                    <svg class="w-5 h-5 mr-2 text-charity-primary" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Skills-based Volunteering
+                                </li>
+                            </ul>
+                            <a href="#"
+                                class="inline-block px-6 py-3 bg-charity-primary text-white rounded-md hover:bg-opacity-90 transition-colors">
+                                Join Our Team
+                            </a>
+                        </div>
                     </div>
-                    <div class="text-center">
-                        <div class="bg-white rounded-full p-8 w-32 h-32 mx-auto mb-6 flex items-center justify-center">
-                            <svg class="w-16 h-16 text-charity-primary" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                            </svg>
+
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="relative h-56">
+                            <img src="https://images.unsplash.com/photo-1589758438368-0ad531db3366?ixlib=rb-4.0.3"
+                                alt="Donate" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">Donate</h3>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">Donate</h3>
-                        <p class="text-gray-600">Support our initiatives with a one-time or recurring donation.</p>
+                        <div class="p-6">
+                            <p class="text-gray-600 mb-6">Your financial support directly funds our programs and helps
+                                communities in need. Every donation makes a difference.</p>
+                            <ul class="space-y-3 mb-6">
+                                <li class="flex items-center text-gray-600">
+                                    <svg class="w-5 h-5 mr-2 text-charity-primary" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    One-time Gifts
+                                </li>
+                                <li class="flex items-center text-gray-600">
+                                    <svg class="w-5 h-5 mr-2 text-charity-primary" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Monthly Giving
+                                </li>
+                                <li class="flex items-center text-gray-600">
+                                    <svg class="w-5 h-5 mr-2 text-charity-primary" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Legacy Giving
+                                </li>
+                            </ul>
+                            <a href="#"
+                                class="inline-block px-6 py-3 bg-charity-primary text-white rounded-md hover:bg-opacity-90 transition-colors">
+                                Donate Now
+                            </a>
+                        </div>
                     </div>
-                    <div class="text-center">
-                        <div class="bg-white rounded-full p-8 w-32 h-32 mx-auto mb-6 flex items-center justify-center">
-                            <svg class="w-16 h-16 text-charity-primary" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                            </svg>
+
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="relative h-56">
+                            <img src="https://images.unsplash.com/photo-1556484687-30636164638b?ixlib=rb-4.0.3"
+                                alt="Partner" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">Partner</h3>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">Spread the Word</h3>
-                        <p class="text-gray-600">Share our mission and impact with your network.</p>
+                        <div class="p-6">
+                            <p class="text-gray-600 mb-6">Organizations can multiply their impact through strategic
+                                partnerships. Join our network of corporate and nonprofit partners.</p>
+                            <ul class="space-y-3 mb-6">
+                                <li class="flex items-center text-gray-600">
+                                    <svg class="w-5 h-5 mr-2 text-charity-primary" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Corporate Partnerships
+                                </li>
+                                <li class="flex items-center text-gray-600">
+                                    <svg class="w-5 h-5 mr-2 text-charity-primary" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    NGO Collaborations
+                                </li>
+                                <li class="flex items-center text-gray-600">
+                                    <svg class="w-5 h-5 mr-2 text-charity-primary" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Sponsor Programs
+                                </li>
+                            </ul>
+                            <a href="#"
+                                class="inline-block px-6 py-3 bg-charity-primary text-white rounded-md hover:bg-opacity-90 transition-colors">
+                                Become a Partner
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-4">Ready to Make a Difference?</h3>
+                            <p class="text-gray-600 mb-6">
+                                Join our global community of changemakers today. Whether you volunteer, donate, or
+                                partner with us,
+                                your contribution helps build a better world for those in need.
+                            </p>
+                            <div class="flex flex-wrap gap-4">
+                                <a href="#"
+                                    class="px-6 py-3 bg-charity-primary text-white rounded-md hover:bg-opacity-90 transition-colors">
+                                    Get Started
+                                </a>
+                                <a href="#"
+                                    class="px-6 py-3 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors">
+                                    Contact Us
+                                </a>
+                            </div>
+                        </div>
+                        <div class="hidden md:block">
+                            <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-4.0.3"
+                                alt="Make a Difference" class="rounded-lg h-64 w-full object-cover">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -614,7 +1037,7 @@
             </div>
         </section>
 
-        <!-- Footer -->
+        <!-- Footer - Updated links to correlate with navigation -->
         <footer class="bg-gray-900 text-white py-16">
             <div class="container mx-auto px-4">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -632,25 +1055,25 @@
                     <div>
                         <h4 class="font-bold mb-4">About</h4>
                         <ul class="space-y-2">
-                            <li><a href="#" class="text-gray-400 hover:text-white">Our Mission</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-white">Our Team</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-white">Annual Report</a></li>
+                            <li><a href="#about" class="text-gray-400 hover:text-white">About Us</a></li>
+                            <li><a href="#about" class="text-gray-400 hover:text-white">Our Mission</a></li>
+                            <li><a href="#work" class="text-gray-400 hover:text-white">Our Work</a></li>
                         </ul>
                     </div>
                     <div>
                         <h4 class="font-bold mb-4">Get Involved</h4>
                         <ul class="space-y-2">
+                            <li><a href="#get-involved" class="text-gray-400 hover:text-white">Ways to Help</a></li>
                             <li><a href="#" class="text-gray-400 hover:text-white">Donate</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-white">Volunteer</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-white">Partner With Us</a></li>
+                            <li><a href="#get-involved" class="text-gray-400 hover:text-white">Volunteer</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h4 class="font-bold mb-4">Connect</h4>
+                        <h4 class="font-bold mb-4">Our Impact</h4>
                         <ul class="space-y-2">
+                            <li><a href="#impact" class="text-gray-400 hover:text-white">Impact Stories</a></li>
+                            <li><a href="#impact" class="text-gray-400 hover:text-white">Statistics</a></li>
                             <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-white">News</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-white">Events</a></li>
                         </ul>
                         <div class="flex space-x-4 mt-6">
                             <!-- Social Media Icons -->
