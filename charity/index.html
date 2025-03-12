@@ -19,7 +19,6 @@
                 }
             }
         </script>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
         <style>
             /* Reset nav styles first */
 
@@ -401,6 +400,46 @@
                 font-weight: bold;
                 text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
             }
+
+            /* Split text animation styles */
+            .split-text {
+                display: inline-block;
+                overflow: hidden;
+            }
+
+            .split-text span {
+                display: inline-block;
+                opacity: 0;
+                transform: translateY(100%);
+            }
+
+            .hero-subtitle span {
+                display: inline-block;
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            /* Add this inside your existing <style> tag */
+            @media (max-width: 768px) {
+                .split-text {
+                    font-size: 2rem;
+                    /* Smaller font size on mobile */
+                    white-space: normal;
+                    /* Allow wrapping on very small screens */
+                }
+            }
+
+            /* Hero heading wrapper - ensures proper width */
+            .max-w-2xl {
+                max-width: 42rem;
+                /* Slightly wider than default to accommodate the full text */
+            }
+
+            /* Add this to your existing <style> tag in the head section */
+            #work .bg-white.rounded-lg {
+                opacity: 0;
+                transform: translateY(50px);
+            }
         </style>
         <script src="https://cdn.skypack.dev/@motionone/dom@10.15.5"></script>
     </head>
@@ -473,86 +512,39 @@
             </div>
         </div>
 
+        <!-- Replace the entire Swiper hero section with this static hero -->
         <!-- Hero Section -->
-        <div class="swiper hero-swiper h-screen">
-            <div class="swiper-wrapper">
-                <!-- Slide 1 -->
-                <div class="swiper-slide relative">
-                    <img src="https://static.wixstatic.com/media/42096e_892d4eca7a7a41338cb5dd122b8a4e8b~mv2.jpg"
-                        alt="Charity in Action" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 hero-gradient"></div>
-                    <div class="absolute inset-0 flex items-end">
-                        <div class="container mx-auto px-4 pb-32">
-                            <div class="max-w-2xl text-white">
-                                <h1 class="text-5xl font-bold mb-8">
-                                    <span class="regular-content">Together, We Can Make a Difference</span>
-                                    <span class="preview-content hidden">Empowering Communities, Changing Lives</span>
-                                </h1>
-                                <div class="space-y-8">
-                                    <div class="flex flex-wrap gap-4">
-                                        <a href="#"
-                                            class="px-6 py-3 bg-charity-primary text-white rounded-md hover:bg-opacity-90 transition-colors">
-                                            Support Our Cause
-                                        </a>
-                                        <a href="#"
-                                            class="px-6 py-3 bg-white text-gray-900 rounded-md hover:bg-opacity-90 transition-colors">
-                                            Learn More
-                                        </a>
-                                    </div>
-                                    <div>
-                                        <p class="text-sm font-bold tracking-wider mb-2">GLOBAL IMPACT INITIATIVE</p>
-                                        <p class="text-xl">
-                                            <span class="regular-content">Empowering communities, changing lives
-                                                worldwide</span>
-                                            <span class="preview-content hidden">Providing hope and resources to those
-                                                in need</span>
-                                        </p>
-                                    </div>
-                                </div>
+        <div class="relative h-screen">
+            <img src="https://static.wixstatic.com/media/42096e_892d4eca7a7a41338cb5dd122b8a4e8b~mv2.jpg"
+                alt="Charity in Action" class="w-full h-full object-cover">
+            <div class="absolute inset-0 hero-gradient"></div>
+            <div class="absolute inset-0 flex items-end">
+                <div class="container mx-auto px-4 pb-32">
+                    <div class="max-w-2xl text-white">
+                        <h1 class="text-5xl font-bold mb-8">
+                            <span class="split-text whitespace-nowrap">Together, We Can Make a Difference</span>
+                        </h1>
+                        <div class="space-y-8">
+                            <div class="flex flex-wrap gap-4">
+                                <a href="#"
+                                    class="px-6 py-3 bg-charity-primary text-white rounded-md hover:bg-opacity-90 transition-colors">
+                                    Support Our Cause
+                                </a>
+                                <a href="#"
+                                    class="px-6 py-3 bg-white text-gray-900 rounded-md hover:bg-opacity-90 transition-colors">
+                                    Learn More
+                                </a>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 2 -->
-                <div class="swiper-slide relative">
-                    <img src="https://www.borgenmagazine.com/wp-content/uploads/2020/04/Roger-Federer%E2%80%99s-Foundation.jpg"
-                        alt="Charity in Action" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 hero-gradient"></div>
-                    <div class="absolute inset-0 flex items-end">
-                        <div class="container mx-auto px-4 pb-32">
-                            <div class="max-w-2xl text-white">
-                                <h1 class="text-5xl font-bold mb-8">
-                                    <span class="regular-content">Together, We Can Make a Difference</span>
-                                    <span class="preview-content hidden">Empowering Communities, Changing Lives</span>
-                                </h1>
-                                <div class="space-y-8">
-                                    <div class="flex flex-wrap gap-4">
-                                        <a href="#"
-                                            class="px-6 py-3 bg-charity-primary text-white rounded-md hover:bg-opacity-90 transition-colors">
-                                            Support Our Cause
-                                        </a>
-                                        <a href="#"
-                                            class="px-6 py-3 bg-white text-gray-900 rounded-md hover:bg-opacity-90 transition-colors">
-                                            Learn More
-                                        </a>
-                                    </div>
-                                    <div>
-                                        <p class="text-sm font-bold tracking-wider mb-2">GLOBAL IMPACT INITIATIVE</p>
-                                        <p class="text-xl">
-                                            <span class="regular-content">Empowering communities, changing lives
-                                                worldwide</span>
-                                            <span class="preview-content hidden">Providing hope and resources to those
-                                                in need</span>
-                                        </p>
-                                    </div>
-                                </div>
+                            <div>
+                                <p class="text-sm font-bold tracking-wider mb-2">GLOBAL IMPACT INITIATIVE</p>
+                                <p class="text-xl hero-subtitle">
+                                    <span>Empowering communities, changing lives worldwide</span>
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="swiper-pagination"></div>
         </div>
 
         <!-- Add this after the hero section and before Impact Numbers -->
@@ -1325,8 +1317,6 @@
         </footer>
 
         <!-- Add this script at the bottom of your body tag -->
-        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-
         <script>
             // DOM Elements
             const nav = document.querySelector('nav');
@@ -1346,7 +1336,7 @@
 
             // Mobile menu toggle
             function toggleMobileMenu(e) {
-                e.preventDefault();
+                if (e) e.preventDefault();
                 mobileMenu.classList.toggle('hidden');
 
                 // Position the mobile menu below the navbar
@@ -1380,23 +1370,73 @@
                 }
             });
 
-            // Initialize Swiper
-            const swiper = new Swiper('.hero-swiper', {
-                loop: true,
-                autoplay: {
-                    delay: 5000,
-                    disableOnInteraction: false
-                },
-                effect: 'fade',
-                fadeEffect: {
-                    crossFade: true
-                },
-                navigation: false,
-                pagination: false
-            });
-
             // Initial calls
             handleScroll();
+        </script>
+
+        <!-- Replace your existing number animation script with this one -->
+        <script>
+            // Simple and reliable number animation
+            document.addEventListener('DOMContentLoaded', function () {
+                // Get all counters
+                const numberCounters = document.querySelectorAll('.number-counter');
+
+                function animateValue(element, start, end, duration) {
+                    // Make sure we're working with numbers
+                    start = Number(start);
+                    end = Number(end);
+
+                    const range = end - start;
+                    let current = start;
+                    const increment = end > start ? 1 : -1;
+                    const stepTime = Math.abs(Math.floor(duration / range));
+                    const suffix = element.getAttribute('data-suffix') || '';
+
+                    // Start with the initial value
+                    element.textContent = start + suffix;
+
+                    const timer = setInterval(function () {
+                        current += increment;
+                        element.textContent = current + suffix;
+
+                        if (current === end) {
+                            clearInterval(timer);
+                        }
+                    }, stepTime);
+                }
+
+                // Create a simple visibility check
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && !entry.target.hasAttribute('data-animated')) {
+                            // Mark as animated
+                            entry.target.setAttribute('data-animated', 'true');
+
+                            // Get target value
+                            const target = parseInt(entry.target.getAttribute('data-target'), 10);
+
+                            // Animate from 0 to target over 2 seconds (or 2000ms)
+                            animateValue(entry.target, 0, target, 2000);
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                // Observe each counter
+                numberCounters.forEach(counter => {
+                    observer.observe(counter);
+                });
+
+                // Fallback: Animate all counters after 2 seconds if no intersection detected
+                setTimeout(() => {
+                    numberCounters.forEach(counter => {
+                        if (!counter.hasAttribute('data-animated')) {
+                            counter.setAttribute('data-animated', 'true');
+                            const target = parseInt(counter.getAttribute('data-target'), 10);
+                            animateValue(counter, 0, target, 2000);
+                        }
+                    });
+                }, 2000);
+            });
         </script>
 
         <script>
@@ -1448,30 +1488,125 @@
         </script>
 
         <script>
-            // Animated counter for impact numbers
+            // Replace the existing split text animation script with this one
             document.addEventListener('DOMContentLoaded', function () {
-                const numberCounters = document.querySelectorAll('.number-counter');
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
-                            const target = parseFloat(entry.target.getAttribute('data-target'));
-                            const suffix = entry.target.getAttribute('data-suffix') || '';
-                            entry.target.classList.add('animated');
+                function animateHeroText() {
+                    // Get the container element
+                    const heroHeading = document.querySelector('.split-text');
+                    const heroSubtitle = document.querySelector('.hero-subtitle span');
 
-                            Motion.animate(0, target, {
-                                duration: 2,
-                                ease: "circOut",
-                                onUpdate: (latest) => {
-                                    entry.target.textContent = Math.round(latest) + suffix;
-                                }
-                            });
-                        }
-                    });
-                }, { threshold: 0.1 });
+                    if (!heroHeading || !heroSubtitle) return;
 
-                numberCounters.forEach(counter => {
-                    observer.observe(counter);
+                    // Store the original text
+                    const headingText = heroHeading.textContent;
+                    const subtitleText = heroSubtitle.textContent;
+
+                    // Clear the container
+                    heroHeading.innerHTML = '';
+                    heroSubtitle.innerHTML = '';
+
+                    // Helper function to create spans for each character
+                    function createCharacterSpans(text, container) {
+                        const spans = [];
+
+                        // Split the text into words
+                        const words = text.split(' ');
+
+                        words.forEach((word, wordIndex) => {
+                            // For each character in the word
+                            for (let i = 0; i < word.length; i++) {
+                                const span = document.createElement('span');
+                                span.textContent = word[i];
+                                span.style.display = 'inline-block';
+                                span.style.opacity = '0';
+                                span.style.transform = 'translateY(30px)';
+                                container.appendChild(span);
+                                spans.push(span);
+                            }
+
+                            // Add a space after each word (except the last one)
+                            if (wordIndex < words.length - 1) {
+                                const spaceSpan = document.createElement('span');
+                                spaceSpan.innerHTML = '&nbsp;';
+                                spaceSpan.style.display = 'inline-block';
+                                spaceSpan.style.opacity = '0';
+                                spaceSpan.style.transform = 'translateY(30px)';
+                                container.appendChild(spaceSpan);
+                                spans.push(spaceSpan);
+                            }
+                        });
+
+                        return spans;
+                    }
+
+                    // Create spans for the heading and subtitle
+                    const headingSpans = createCharacterSpans(headingText, heroHeading);
+
+                    // Animate the heading characters with stagger
+                    for (let i = 0; i < headingSpans.length; i++) {
+                        const span = headingSpans[i];
+
+                        setTimeout(() => {
+                            span.style.transition = 'opacity 0.3s ease, transform 0.4s ease';
+                            span.style.opacity = '1';
+                            span.style.transform = 'translateY(0px)';
+                        }, 50 * i + 100); // Stagger the animations
+                    }
+
+                    // Animate the subtitle after heading animation
+                    setTimeout(() => {
+                        heroSubtitle.textContent = subtitleText;
+                        heroSubtitle.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                        heroSubtitle.style.opacity = '1';
+                        heroSubtitle.style.transform = 'translateY(0px)';
+                    }, 50 * headingSpans.length + 300);
+                }
+
+                // Run the animation when the page loads
+                setTimeout(animateHeroText, 500);
+            });
+        </script>
+
+        <!-- Replace the existing Our Work animation script with this one -->
+        <script>
+            // Stagger animation for the Our Work section - fixed version
+            document.addEventListener('DOMContentLoaded', function () {
+                // Get all work cards
+                const workSection = document.getElementById('work');
+                if (!workSection) return;
+
+                const workCards = workSection.querySelectorAll('.bg-white.rounded-lg');
+                if (!workCards.length) return;
+
+                // First, ensure all cards are initially hidden
+                workCards.forEach(card => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(50px)';
                 });
+
+                // Function to animate cards
+                function animateCards() {
+                    let delay = 100;
+                    workCards.forEach(card => {
+                        setTimeout(() => {
+                            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, delay);
+                        delay += 150; // 150ms stagger between each card
+                    });
+                }
+
+                // Create intersection observer with simpler implementation
+                const observer = new IntersectionObserver((entries) => {
+                    if (entries[0].isIntersecting) {
+                        animateCards();
+                        observer.disconnect(); // Only animate once
+                    }
+                }, { threshold: 0.2 });
+
+                // Start observing the work section
+                observer.observe(workSection);
             });
         </script>
 
