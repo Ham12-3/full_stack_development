@@ -31,8 +31,13 @@
                 box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
                 max-height: calc(100vh - 80px);
                 overflow-y: auto;
-
+                position: fixed;
+                top: 72px !important;
+                /* Fixed position */
+                left: 0;
+                right: 0;
                 z-index: 40;
+                border-radius: 0 0 1rem 1rem;
             }
 
             /* Mobile menu animation */
@@ -440,6 +445,148 @@
                 opacity: 0;
                 transform: translateY(50px);
             }
+
+            /* Improved mobile menu styles */
+            #mobile-menu {
+                transition: all 0.3s ease-in-out;
+                backdrop-filter: blur(8px);
+                background-color: rgba(255, 255, 255, 0.95);
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+                max-height: calc(100vh - 80px);
+                overflow-y: auto;
+                position: fixed;
+                top: 72px !important;
+                /* Fixed position */
+                left: 0;
+                right: 0;
+                z-index: 40;
+                border-radius: 0 0 1rem 1rem;
+            }
+
+            /* More compact nav on smaller screens */
+            @media (max-width: 640px) {
+                nav {
+                    margin: 0 !important;
+                    width: 100% !important;
+                    left: 0 !important;
+                    right: 0 !important;
+                    padding: 0 !important;
+                }
+
+                /* Full-width nav on mobile */
+                .nav-blur {
+                    border-radius: 0 !important;
+                    margin: 0 !important;
+                    width: 100% !important;
+                    left: 0 !important;
+                    right: 0 !important;
+                }
+
+                /* Adjust logo text size */
+                .logo-text {
+                    font-size: 1rem !important;
+                }
+
+                /* Adjusted mobile menu button */
+                #mobileMenuBtn {
+                    margin-right: 0;
+                }
+
+                /* Better spacing on mobile */
+                .container {
+                    padding-left: 1rem !important;
+                    padding-right: 1rem !important;
+                }
+
+                /* Fixed hero text size on mobile */
+                .split-text {
+                    font-size: 1.75rem !important;
+                    line-height: 2.2rem !important;
+                }
+
+                /* Improve mobile spacing */
+                .py-20 {
+                    padding-top: 2.5rem !important;
+                    padding-bottom: 2.5rem !important;
+                }
+
+                /* Better grid gaps on mobile */
+                .gap-8,
+                .gap-12 {
+                    gap: 1rem !important;
+                }
+
+                /* Cookie consent for mobile */
+                #cookie-consent .flex {
+                    flex-direction: column !important;
+                }
+            }
+
+            /* Improved tablet responsiveness */
+            @media (min-width: 641px) and (max-width: 1023px) {
+                .nav-blur {
+                    border-radius: 0.5rem !important;
+                    margin: 0.5rem 1rem !important;
+                    width: calc(100% - 2rem) !important;
+                }
+
+                /* Better grid layouts for tablet */
+                .grid-cols-2 {
+                    grid-template-columns: 1fr !important;
+                }
+
+                .lg\:grid-cols-3 {
+                    grid-template-columns: repeat(2, 1fr) !important;
+                }
+
+                /* Improved hero text */
+                .split-text {
+                    font-size: 2.25rem !important;
+                    line-height: 2.75rem !important;
+                }
+            }
+
+            /* Fix video cards on mobile */
+            @media (max-width: 767px) {
+                .aspect-video {
+                    height: 200px !important;
+                }
+
+                .play-btn {
+                    width: 3rem !important;
+                    height: 3rem !important;
+                }
+
+                .play-btn svg {
+                    width: 1.5rem !important;
+                    height: 1.5rem !important;
+                }
+            }
+
+            /* Improve comparison slider on mobile */
+            @media (max-width: 640px) {
+                .comparison-slider-wrapper {
+                    height: 250px !important;
+                }
+
+                .slider-handle:after {
+                    width: 30px !important;
+                    height: 30px !important;
+                }
+
+                .slider-label {
+                    font-size: 0.75rem !important;
+                    padding: 3px 6px !important;
+                }
+            }
+
+            /* Make the footer more mobile-friendly */
+            @media (max-width: 640px) {
+                footer .grid-cols-4 {
+                    grid-template-columns: repeat(2, 1fr) !important;
+                    gap: 2rem !important;
+                }
+            }
         </style>
         <script src="https://cdn.skypack.dev/@motionone/dom@10.15.5"></script>
     </head>
@@ -450,22 +597,24 @@
             Honouring our beloved parents through acts of charity. <a href="#" class="underline">Support Our Cause →</a>
         </div>
 
-        <!-- Navigation -->
-        <nav class="fixed w-full z-50 mt-8">
-            <div class="container mx-auto">
-                <div class="flex items-center justify-between h-24">
+        <!-- Updated Navigation Section with Fixed Mobile Menu -->
+
+        <!-- Replace your existing Navigation section with this improved version -->
+        <nav class="fixed w-full z-50 transition-all duration-300">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between h-20">
                     <!-- Logo -->
                     <div class="flex items-center">
                         <a href="/" class="flex items-center">
                             <img src="images/logo.png" alt="Exquisite Bizz Foundation Logo" class="h-10">
-                            <span class="ml-3 text-white text-xl font-bold logo-text">Exquisite Bizz</span>
-                            <div class="ml-2 px-2 py-1 bg-white/20 text-white text-xs font-bold rounded">FOUNDATION
-                            </div>
+                            <span
+                                class="ml-3 text-white text-xl font-bold logo-text truncate max-w-[200px] md:max-w-none">Exquisite
+                                Bizz Foundation</span>
                         </a>
                     </div>
 
-                    <!-- Main Menu -->
-                    <div class="hidden lg:flex items-center space-x-8">
+                    <!-- Main Menu - Desktop -->
+                    <div class="hidden lg:flex items-center space-x-6">
                         <a href="#about" class="text-white nav-link hover:text-charity-primary transition-colors">About
                             Us</a>
                         <a href="#work" class="text-white nav-link hover:text-charity-primary transition-colors">Our
@@ -482,7 +631,8 @@
                     </div>
 
                     <!-- Mobile Menu Button -->
-                    <button class="lg:hidden text-white p-2" id="mobileMenuBtn" aria-label="Toggle mobile menu">
+                    <button class="lg:hidden text-white p-2 flex items-center justify-center focus:outline-none"
+                        id="mobileMenuBtn" aria-label="Toggle mobile menu">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 6h16M4 12h16M4 18h16" />
@@ -491,6 +641,126 @@
                 </div>
             </div>
         </nav>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed lg:hidden inset-0 bg-black/50 z-40 hidden" aria-hidden="true"></div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu-panel"
+            class="fixed lg:hidden right-0 top-0 bottom-0 w-[80%] max-w-sm bg-white z-50 shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto">
+            <div class="p-5 flex justify-between items-center border-b border-gray-200">
+                <span class="text-xl font-bold text-charity-primary">Menu</span>
+                <button id="close-mobile-menu" class="p-2 focus:outline-none">
+                    <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="flex flex-col p-5 space-y-4">
+                <a href="#about"
+                    class="px-4 py-3 text-gray-800 hover:bg-gray-100 hover:text-charity-primary rounded-md">About Us</a>
+                <a href="#work"
+                    class="px-4 py-3 text-gray-800 hover:bg-gray-100 hover:text-charity-primary rounded-md">Our Work</a>
+                <a href="#impact"
+                    class="px-4 py-3 text-gray-800 hover:bg-gray-100 hover:text-charity-primary rounded-md">Impact</a>
+                <a href="#get-involved"
+                    class="px-4 py-3 text-gray-800 hover:bg-gray-100 hover:text-charity-primary rounded-md">Get
+                    Involved</a>
+                <div class="pt-4 border-t border-gray-200 mt-2">
+                    <a href="#"
+                        class="block w-full px-4 py-3 text-center bg-charity-primary text-white rounded-md hover:bg-opacity-90">
+                        Donate
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Replace your existing navigation JavaScript code with this improved version -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const nav = document.querySelector('nav');
+                const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+                const mobileMenuOverlay = document.getElementById('mobile-menu');
+                const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+                const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
+                const mobileMenuLinks = mobileMenuPanel.querySelectorAll('a');
+
+                // Handle scroll for navigation appearance
+                function handleScroll() {
+                    if (window.scrollY > 50) {
+                        nav.classList.add('nav-blur');
+                        nav.classList.add('nav-scrolled');
+                    } else {
+                        nav.classList.remove('nav-blur');
+                        nav.classList.remove('nav-scrolled');
+                    }
+                }
+
+                // Toggle mobile menu function
+                function toggleMobileMenu() {
+                    const isOpen = !mobileMenuOverlay.classList.contains('hidden');
+
+                    if (isOpen) {
+                        // Close menu
+                        mobileMenuOverlay.classList.add('hidden');
+                        mobileMenuPanel.classList.add('translate-x-full');
+                        document.body.classList.remove('overflow-hidden');
+                    } else {
+                        // Open menu
+                        mobileMenuOverlay.classList.remove('hidden');
+                        mobileMenuPanel.classList.remove('translate-x-full');
+                        document.body.classList.add('overflow-hidden');
+                    }
+                }
+
+                // Event listeners
+                mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+                closeMobileMenuBtn.addEventListener('click', toggleMobileMenu);
+                mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
+
+                // Close menu when clicking a link
+                mobileMenuLinks.forEach(link => {
+                    link.addEventListener('click', toggleMobileMenu);
+                });
+
+                // Handle window resize
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth >= 1024) {
+                        // Reset mobile menu state on desktop
+                        mobileMenuOverlay.classList.add('hidden');
+                        mobileMenuPanel.classList.add('translate-x-full');
+                        document.body.classList.remove('overflow-hidden');
+                    }
+                });
+
+                // Handle scroll events
+                window.addEventListener('scroll', handleScroll);
+
+                // Initialize
+                handleScroll();
+
+                // Fix navigation links smooth scrolling
+                const navLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+
+                        if (targetElement) {
+                            const navHeight = nav.offsetHeight;
+                            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+            });
+        </script>
 
         <!-- Add this after your main navigation -->
         <div id="mobile-menu"
@@ -842,132 +1112,26 @@
                             alt="Healthcare Impact" class="rounded-lg shadow-lg w-full h-[400px] object-cover">
                     </div>
                     <div>
-                        <h3 class="text-2xl font-bold mb-4">Healthcare Impact</h3>
-                        <p class="text-gray-600 mb-6">
-                            Our healthcare initiatives have reached over 2 million people, providing essential medical
-                            services
-                            through mobile clinics, vaccination programmes, and healthcare education.
-                        </p>
-                        <ul class="space-y-4">
-                            <li class="flex items-start">
-                                <svg class="w-6 h-6 text-charity-primary mr-2 mt-0.5" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span><strong>200+</strong> Mobile clinics established in remote areas</span>
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="w-6 h-6 text-charity-primary mr-2 mt-0.5" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span><strong>500,000+</strong> Children vaccinated against preventable diseases</span>
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="w-6 h-6 text-charity-primary mr-2 mt-0.5" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span><strong>1,000+</strong> Medical professionals trained</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
-                    <div class="order-2 md:order-1">
-                        <h3 class="text-2xl font-bold mb-4">Education Impact</h3>
-                        <p class="text-gray-600 mb-6">
-                            Our education programmes have built schools, provided scholarships, and trained teachers
-                            to ensure quality education for children in underserved communities.
-                        </p>
-                        <ul class="space-y-4">
-                            <li class="flex items-start">
-                                <svg class="w-6 h-6 text-charity-primary mr-2 mt-0.5" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span><strong>100+</strong> Schools built or renovated</span>
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="w-6 h-6 text-charity-primary mr-2 mt-0.5" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span><strong>50,000+</strong> Students gained access to education</span>
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="w-6 h-6 text-charity-primary mr-2 mt-0.5" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span><strong>2,000+</strong> Teachers received professional development</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="order-1 md:order-2">
-                        <img src="https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Libraries/Production+Library/09-09-2021_UNICEF_Cameroon.jpg/image1170x530cropped.jpg"
-                            alt="Education Impact" class="rounded-lg shadow-lg w-full h-[400px] object-cover">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <!-- Replace the existing Clean Water Impact image with this -->
-                        <div class="comparison-slider-wrapper">
-                            <div class="comparison-slider">
-                                <div class="after-image"
-                                    style="background-image: url('https://sevansolutions.com/wp-content/uploads/2020/03/The-Water-Project-Featured-Image_Website-1024x936.png');">
-                                </div>
-                                <div class="before-image"
-                                    style="background-image: url('https://www.unicef.org/zimbabwe/sites/unicef.org.zimbabwe/files/styles/press_release_feature/public/UNI313402.jpg?itok=f91YB2dH');">
-                                </div>
-                                <div class="slider-handle" role="slider" aria-valuenow="50"></div>
-                            </div>
-                            <div class="slider-labels">
-                                <span class="slider-label">Before</span>
-                                <span class="slider-label">After</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-bold mb-4">Clean Water Impact</h3>
-                        <p class="text-gray-600 mb-6">
-                            Our clean water initiatives have transformed communities by providing access to safe
-                            drinking water,
-                            reducing waterborne diseases, and improving overall health.
-                        </p>
-                        <ul class="space-y-4">
-                            <li class="flex items-start">
-                                <svg class="w-6 h-6 text-charity-primary mr-2 mt-0.5" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span><strong>500+</strong> Wells and water systems installed</span>
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="w-6 h-6 text-charity-primary mr-2 mt-0.5" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span><strong>70%</strong> Reduction in waterborne illnesses</span>
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="w-6 h-6 text-charity-primary mr-2 mt-0.5" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span><strong>1.5M+</strong> People with new access to clean water</span>
-                            </li>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span><strong>500+</strong> Wells and water systems installed</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-charity-primary mr-2 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span><strong>70%</strong> Reduction in waterborne illnesses</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-charity-primary mr-2 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span><strong>1.5M+</strong> People with new access to clean water</span>
+                        </li>
                         </ul>
                     </div>
                 </div>
@@ -2149,6 +2313,137 @@
                         cookiePreferences.classList.add('hidden');
                     }
                 });
+            });
+        </script>
+
+        <script>
+            // Updated mobile menu script with better position handling
+            document.addEventListener('DOMContentLoaded', function () {
+                const nav = document.querySelector('nav');
+                const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+                const mobileMenu = document.getElementById('mobile-menu');
+
+                // Improved mobile menu positioning
+                function updateMobileMenuPosition() {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        const navRect = nav.getBoundingClientRect();
+                        mobileMenu.style.top = `${navRect.bottom}px`;
+
+                        // Adjust for very small screens
+                        if (window.innerWidth <= 640) {
+                            mobileMenu.style.width = '100%';
+                            mobileMenu.style.left = '0';
+                            mobileMenu.style.right = '0';
+                            mobileMenu.style.borderRadius = '0';
+                        } else {
+                            // Match navbar width and position on tablets
+                            mobileMenu.style.width = nav.style.width || `${navRect.width}px`;
+                            mobileMenu.style.left = nav.style.left || `${navRect.left}px`;
+                            mobileMenu.style.right = nav.style.right || `${navRect.right}px`;
+                        }
+                    }
+                }
+
+                // Toggle mobile menu with improved positioning
+                function toggleMobileMenu(e) {
+                    if (e) e.preventDefault();
+                    mobileMenu.classList.toggle('hidden');
+
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        updateMobileMenuPosition();
+                    }
+                }
+
+                // Scroll handler with mobile optimizations
+                function handleScroll() {
+                    if (window.scrollY > 50) {
+                        nav.classList.add('nav-blur');
+                        nav.classList.add('nav-scrolled');
+
+                        // Adjust for mobile when scrolled
+                        if (window.innerWidth <= 640) {
+                            nav.style.width = '100%';
+                            nav.style.margin = '0';
+                            nav.style.borderRadius = '0';
+                        }
+                    } else {
+                        nav.classList.remove('nav-blur');
+                        nav.classList.remove('nav-scrolled');
+                    }
+
+                    // Update mobile menu position if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        updateMobileMenuPosition();
+                    }
+                }
+
+                // Event Listeners
+                window.addEventListener('scroll', handleScroll);
+                window.addEventListener('resize', updateMobileMenuPosition);
+
+                if (mobileMenuBtn) {
+                    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+                }
+
+                // Close menu when clicking outside with improved touch handling
+                document.addEventListener('click', (e) => {
+                    if (mobileMenu &&
+                        !mobileMenuBtn?.contains(e.target) &&
+                        !mobileMenu.contains(e.target)) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+
+                // Better touch handling for sliders
+                if (document.querySelector('.slider-handle')) {
+                    const sliderHandle = document.querySelector('.slider-handle');
+                    const sliderWrapper = document.querySelector('.comparison-slider-wrapper');
+
+                    // Add specific touch handling for mobile devices
+                    sliderHandle.addEventListener('touchstart', function (e) {
+                        e.preventDefault(); // Prevent default touch behavior
+                        isActive = true;
+                    }, { passive: false });
+
+                    window.addEventListener('touchend', function () {
+                        isActive = false;
+                    });
+
+                    window.addEventListener('touchmove', function (e) {
+                        if (!isActive) return;
+                        const touch = e.touches[0];
+                        const rect = sliderWrapper.getBoundingClientRect();
+                        const position = ((touch.clientX - rect.left) / rect.width) * 100;
+
+                        // Restrict movement between 5% and 95%
+                        const clampedPosition = Math.max(5, Math.min(position, 95));
+
+                        // Update positions
+                        sliderHandle.style.setProperty('--position', clampedPosition + '%');
+                        document.querySelector('.before-image').style.setProperty('--position', clampedPosition + '%');
+                    }, { passive: true });
+                }
+
+                // Improve cookie consent on mobile
+                const cookieConsent = document.getElementById('cookie-consent');
+                if (cookieConsent) {
+                    // Adjust positioning based on screen size
+                    function updateCookieConsentLayout() {
+                        if (window.innerWidth <= 640) {
+                            cookieConsent.querySelector('.flex').classList.add('flex-col');
+                            cookieConsent.querySelector('.flex').classList.remove('md:flex-row');
+                        } else {
+                            cookieConsent.querySelector('.flex').classList.remove('flex-col');
+                            cookieConsent.querySelector('.flex').classList.add('md:flex-row');
+                        }
+                    }
+
+                    window.addEventListener('resize', updateCookieConsentLayout);
+                    updateCookieConsentLayout(); // Run once on load
+                }
+
+                // Initial calls
+                handleScroll();
             });
         </script>
 
