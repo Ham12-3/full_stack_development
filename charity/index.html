@@ -31,13 +31,8 @@
                 box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
                 max-height: calc(100vh - 80px);
                 overflow-y: auto;
-                position: fixed;
-                top: 72px !important;
-                /* Fixed position */
-                left: 0;
-                right: 0;
+
                 z-index: 40;
-                border-radius: 0 0 1rem 1rem;
             }
 
             /* Mobile menu animation */
@@ -445,148 +440,6 @@
                 opacity: 0;
                 transform: translateY(50px);
             }
-
-            /* Improved mobile menu styles */
-            #mobile-menu {
-                transition: all 0.3s ease-in-out;
-                backdrop-filter: blur(8px);
-                background-color: rgba(255, 255, 255, 0.95);
-                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-                max-height: calc(100vh - 80px);
-                overflow-y: auto;
-                position: fixed;
-                top: 72px !important;
-                /* Fixed position */
-                left: 0;
-                right: 0;
-                z-index: 40;
-                border-radius: 0 0 1rem 1rem;
-            }
-
-            /* More compact nav on smaller screens */
-            @media (max-width: 640px) {
-                nav {
-                    margin: 0 !important;
-                    width: 100% !important;
-                    left: 0 !important;
-                    right: 0 !important;
-                    padding: 0 !important;
-                }
-
-                /* Full-width nav on mobile */
-                .nav-blur {
-                    border-radius: 0 !important;
-                    margin: 0 !important;
-                    width: 100% !important;
-                    left: 0 !important;
-                    right: 0 !important;
-                }
-
-                /* Adjust logo text size */
-                .logo-text {
-                    font-size: 1rem !important;
-                }
-
-                /* Adjusted mobile menu button */
-                #mobileMenuBtn {
-                    margin-right: 0;
-                }
-
-                /* Better spacing on mobile */
-                .container {
-                    padding-left: 1rem !important;
-                    padding-right: 1rem !important;
-                }
-
-                /* Fixed hero text size on mobile */
-                .split-text {
-                    font-size: 1.75rem !important;
-                    line-height: 2.2rem !important;
-                }
-
-                /* Improve mobile spacing */
-                .py-20 {
-                    padding-top: 2.5rem !important;
-                    padding-bottom: 2.5rem !important;
-                }
-
-                /* Better grid gaps on mobile */
-                .gap-8,
-                .gap-12 {
-                    gap: 1rem !important;
-                }
-
-                /* Cookie consent for mobile */
-                #cookie-consent .flex {
-                    flex-direction: column !important;
-                }
-            }
-
-            /* Improved tablet responsiveness */
-            @media (min-width: 641px) and (max-width: 1023px) {
-                .nav-blur {
-                    border-radius: 0.5rem !important;
-                    margin: 0.5rem 1rem !important;
-                    width: calc(100% - 2rem) !important;
-                }
-
-                /* Better grid layouts for tablet */
-                .grid-cols-2 {
-                    grid-template-columns: 1fr !important;
-                }
-
-                .lg\:grid-cols-3 {
-                    grid-template-columns: repeat(2, 1fr) !important;
-                }
-
-                /* Improved hero text */
-                .split-text {
-                    font-size: 2.25rem !important;
-                    line-height: 2.75rem !important;
-                }
-            }
-
-            /* Fix video cards on mobile */
-            @media (max-width: 767px) {
-                .aspect-video {
-                    height: 200px !important;
-                }
-
-                .play-btn {
-                    width: 3rem !important;
-                    height: 3rem !important;
-                }
-
-                .play-btn svg {
-                    width: 1.5rem !important;
-                    height: 1.5rem !important;
-                }
-            }
-
-            /* Improve comparison slider on mobile */
-            @media (max-width: 640px) {
-                .comparison-slider-wrapper {
-                    height: 250px !important;
-                }
-
-                .slider-handle:after {
-                    width: 30px !important;
-                    height: 30px !important;
-                }
-
-                .slider-label {
-                    font-size: 0.75rem !important;
-                    padding: 3px 6px !important;
-                }
-            }
-
-            /* Make the footer more mobile-friendly */
-            @media (max-width: 640px) {
-                footer .grid-cols-4 {
-                    grid-template-columns: repeat(2, 1fr) !important;
-                    gap: 2rem !important;
-                }
-            }
         </style>
         <script src="https://cdn.skypack.dev/@motionone/dom@10.15.5"></script>
     </head>
@@ -594,27 +447,25 @@
     <body>
         <!-- Alert Banner -->
         <div class="bg-charity-dark text-white py-2 text-center text-sm">
-            Honouring our beloved parents through acts of charity. <a href="#" class="underline">Support Our Cause →</a>
+            Honoring our beloved parents through acts of charity. <a href="#" class="underline">Support Our Cause →</a>
         </div>
 
-        <!-- Updated Navigation Section with Fixed Mobile Menu -->
-
-        <!-- Replace your existing Navigation section with this improved version -->
-        <nav class="fixed w-full z-50 transition-all duration-300">
-            <div class="container mx-auto px-4">
-                <div class="flex items-center justify-between h-20">
+        <!-- Navigation -->
+        <nav class="fixed w-full z-50 mt-8">
+            <div class="container mx-auto">
+                <div class="flex items-center justify-between h-24">
                     <!-- Logo -->
                     <div class="flex items-center">
                         <a href="/" class="flex items-center">
                             <img src="images/logo.png" alt="Exquisite Bizz Foundation Logo" class="h-10">
-                            <span
-                                class="ml-3 text-white text-xl font-bold logo-text truncate max-w-[200px] md:max-w-none">Exquisite
-                                Bizz Foundation</span>
+                            <span class="ml-3 text-white text-xl font-bold logo-text">Exquisite Bizz</span>
+                            <div class="ml-2 px-2 py-1 bg-white/20 text-white text-xs font-bold rounded">FOUNDATION
+                            </div>
                         </a>
                     </div>
 
-                    <!-- Main Menu - Desktop -->
-                    <div class="hidden lg:flex items-center space-x-6">
+                    <!-- Main Menu -->
+                    <div class="hidden lg:flex items-center space-x-8">
                         <a href="#about" class="text-white nav-link hover:text-charity-primary transition-colors">About
                             Us</a>
                         <a href="#work" class="text-white nav-link hover:text-charity-primary transition-colors">Our
@@ -631,8 +482,7 @@
                     </div>
 
                     <!-- Mobile Menu Button -->
-                    <button class="lg:hidden text-white p-2 flex items-center justify-center focus:outline-none"
-                        id="mobileMenuBtn" aria-label="Toggle mobile menu">
+                    <button class="lg:hidden text-white p-2" id="mobileMenuBtn" aria-label="Toggle mobile menu">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 6h16M4 12h16M4 18h16" />
@@ -641,126 +491,6 @@
                 </div>
             </div>
         </nav>
-
-        <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu" class="fixed lg:hidden inset-0 bg-black/50 z-40 hidden" aria-hidden="true"></div>
-
-        <!-- Mobile Menu Panel -->
-        <div id="mobile-menu-panel"
-            class="fixed lg:hidden right-0 top-0 bottom-0 w-[80%] max-w-sm bg-white z-50 shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto">
-            <div class="p-5 flex justify-between items-center border-b border-gray-200">
-                <span class="text-xl font-bold text-charity-primary">Menu</span>
-                <button id="close-mobile-menu" class="p-2 focus:outline-none">
-                    <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-            <div class="flex flex-col p-5 space-y-4">
-                <a href="#about"
-                    class="px-4 py-3 text-gray-800 hover:bg-gray-100 hover:text-charity-primary rounded-md">About Us</a>
-                <a href="#work"
-                    class="px-4 py-3 text-gray-800 hover:bg-gray-100 hover:text-charity-primary rounded-md">Our Work</a>
-                <a href="#impact"
-                    class="px-4 py-3 text-gray-800 hover:bg-gray-100 hover:text-charity-primary rounded-md">Impact</a>
-                <a href="#get-involved"
-                    class="px-4 py-3 text-gray-800 hover:bg-gray-100 hover:text-charity-primary rounded-md">Get
-                    Involved</a>
-                <div class="pt-4 border-t border-gray-200 mt-2">
-                    <a href="#"
-                        class="block w-full px-4 py-3 text-center bg-charity-primary text-white rounded-md hover:bg-opacity-90">
-                        Donate
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Replace your existing navigation JavaScript code with this improved version -->
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const nav = document.querySelector('nav');
-                const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-                const mobileMenuOverlay = document.getElementById('mobile-menu');
-                const mobileMenuPanel = document.getElementById('mobile-menu-panel');
-                const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
-                const mobileMenuLinks = mobileMenuPanel.querySelectorAll('a');
-
-                // Handle scroll for navigation appearance
-                function handleScroll() {
-                    if (window.scrollY > 50) {
-                        nav.classList.add('nav-blur');
-                        nav.classList.add('nav-scrolled');
-                    } else {
-                        nav.classList.remove('nav-blur');
-                        nav.classList.remove('nav-scrolled');
-                    }
-                }
-
-                // Toggle mobile menu function
-                function toggleMobileMenu() {
-                    const isOpen = !mobileMenuOverlay.classList.contains('hidden');
-
-                    if (isOpen) {
-                        // Close menu
-                        mobileMenuOverlay.classList.add('hidden');
-                        mobileMenuPanel.classList.add('translate-x-full');
-                        document.body.classList.remove('overflow-hidden');
-                    } else {
-                        // Open menu
-                        mobileMenuOverlay.classList.remove('hidden');
-                        mobileMenuPanel.classList.remove('translate-x-full');
-                        document.body.classList.add('overflow-hidden');
-                    }
-                }
-
-                // Event listeners
-                mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-                closeMobileMenuBtn.addEventListener('click', toggleMobileMenu);
-                mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
-
-                // Close menu when clicking a link
-                mobileMenuLinks.forEach(link => {
-                    link.addEventListener('click', toggleMobileMenu);
-                });
-
-                // Handle window resize
-                window.addEventListener('resize', () => {
-                    if (window.innerWidth >= 1024) {
-                        // Reset mobile menu state on desktop
-                        mobileMenuOverlay.classList.add('hidden');
-                        mobileMenuPanel.classList.add('translate-x-full');
-                        document.body.classList.remove('overflow-hidden');
-                    }
-                });
-
-                // Handle scroll events
-                window.addEventListener('scroll', handleScroll);
-
-                // Initialize
-                handleScroll();
-
-                // Fix navigation links smooth scrolling
-                const navLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
-                navLinks.forEach(link => {
-                    link.addEventListener('click', function (e) {
-                        e.preventDefault();
-                        const targetId = this.getAttribute('href');
-                        const targetElement = document.querySelector(targetId);
-
-                        if (targetElement) {
-                            const navHeight = nav.offsetHeight;
-                            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
-
-                            window.scrollTo({
-                                top: targetPosition,
-                                behavior: 'smooth'
-                            });
-                        }
-                    });
-                });
-            });
-        </script>
 
         <!-- Add this after your main navigation -->
         <div id="mobile-menu"
@@ -821,7 +551,7 @@
                     <h2 class="text-3xl font-bold mb-6">About Exquisite Bizz Foundation</h2>
                     <div class="w-24 h-1 bg-charity-primary mx-auto mb-8"></div>
                     <p class="text-gray-600 text-lg mb-8">
-                        Exquisite Bizz Foundation was established to honour the legacy of our beloved parents who
+                        Exquisite Bizz Foundation was established to honor the legacy of our beloved parents who
                         dedicated their lives to helping others. Following their exemplary commitment to Islamic
                         principles of charity (Sadaqah) and service, we continue their work through sustainable
                         initiatives that empower communities worldwide.
@@ -837,8 +567,8 @@
                         <h3 class="text-2xl font-bold mb-4">Our Mission</h3>
                         <p class="text-gray-600 mb-6">
                             Guided by the Islamic values of compassion (Rahma) and kindness (Ihsan), we work to create
-                            lasting positive change in underserved communities. Our approach honours our parents' legacy
-                            by combining immediate assistance with sustainable development programmes.
+                            lasting positive change in underserved communities. Our approach honors our parents' legacy
+                            by combining immediate assistance with sustainable development programs.
                         </p>
                         <ul class="space-y-4">
                             <li class="flex items-center">
@@ -878,8 +608,7 @@
                     <h2 class="text-3xl font-bold mb-6">Our Work</h2>
                     <div class="w-24 h-1 bg-charity-primary mx-auto mb-8"></div>
                     <p class="text-gray-600 text-lg">
-                        Continuing our parents' legacy of service and compassion through programmes that create
-                        positive,
+                        Continuing our parents' legacy of service and compassion through programs that create positive,
                         sustainable change in communities worldwide.
                     </p>
                 </div>
@@ -1008,47 +737,6 @@
                                 </ul>
                         </div>
                     </div>
-
-                    <!-- Add this as the 4th card in the Our Work section after the Healthcare card -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <div class="relative h-64">
-                            <img src="images/prayer-session.png" alt="Prayer Sessions"
-                                class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                            <div class="absolute bottom-4 left-4 text-white">
-                                <h3 class="text-xl font-bold">Prayer Sessions</h3>
-                                <p class="text-sm">Honouring Through Devotion</p>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <ul class="space-y-3">
-                                <li class="flex items-center text-gray-600">
-                                    <svg class="w-5 h-5 mr-2 text-charity-primary" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                    Quran Recitation Gatherings
-                                </li>
-                                <li class="flex items-center text-gray-600">
-                                    <svg class="w-5 h-5 mr-2 text-charity-primary" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                    Sessions with Islamic Scholars
-                                </li>
-                                <li class="flex items-center text-gray-600">
-                                    <svg class="w-5 h-5 mr-2 text-charity-primary" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                    Commemorative Prayers (Dua)
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -1060,8 +748,7 @@
                     <h2 class="text-3xl font-bold mb-6">Our Initial Targets</h2>
                     <div class="w-24 h-1 bg-charity-primary mx-auto mb-8"></div>
                     <p class="text-gray-600 text-lg mb-8">
-                        With your support, we aim to achieve these meaningful goals as we begin our journey to honour
-                        our
+                        With your support, we aim to achieve these meaningful goals as we begin our journey to honor our
                         parents' legacy.
                     </p>
                 </div>
@@ -1086,7 +773,7 @@
                     </div>
                     <div class="text-center">
                         <h3 class="text-5xl font-bold text-charity-secondary mb-2">
-                            £<span class="number-counter" data-target="500" data-suffix="K">0</span>
+                            £<span class="number-counter" data-target="1" data-suffix="M">0</span>
                         </h3>
                         <p class="text-gray-600 text-lg">Initial Funding Goal</p>
                     </div>
@@ -1112,334 +799,137 @@
                             alt="Healthcare Impact" class="rounded-lg shadow-lg w-full h-[400px] object-cover">
                     </div>
                     <div>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        <span><strong>500+</strong> Wells and water systems installed</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-charity-primary mr-2 mt-0.5" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            <span><strong>70%</strong> Reduction in waterborne illnesses</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-6 h-6 text-charity-primary mr-2 mt-0.5" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            <span><strong>1.5M+</strong> People with new access to clean water</span>
-                        </li>
+                        <h3 class="text-2xl font-bold mb-4">Healthcare Impact</h3>
+                        <p class="text-gray-600 mb-6">
+                            Our healthcare initiatives have reached over 2 million people, providing essential medical
+                            services
+                            through mobile clinics, vaccination programs, and healthcare education.
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-charity-primary mr-2 mt-0.5" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span><strong>200+</strong> Mobile clinics established in remote areas</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-charity-primary mr-2 mt-0.5" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span><strong>500,000+</strong> Children vaccinated against preventable diseases</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-charity-primary mr-2 mt-0.5" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span><strong>1,000+</strong> Medical professionals trained</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+                    <div class="order-2 md:order-1">
+                        <h3 class="text-2xl font-bold mb-4">Education Impact</h3>
+                        <p class="text-gray-600 mb-6">
+                            Our education programs have built schools, provided scholarships, and trained teachers
+                            to ensure quality education for children in underserved communities.
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-charity-primary mr-2 mt-0.5" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span><strong>100+</strong> Schools built or renovated</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-charity-primary mr-2 mt-0.5" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span><strong>50,000+</strong> Students gained access to education</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-charity-primary mr-2 mt-0.5" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span><strong>2,000+</strong> Teachers received professional development</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <img src="https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Libraries/Production+Library/09-09-2021_UNICEF_Cameroon.jpg/image1170x530cropped.jpg"
+                            alt="Education Impact" class="rounded-lg shadow-lg w-full h-[400px] object-cover">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <!-- Replace the existing Clean Water Impact image with this -->
+                        <div class="comparison-slider-wrapper">
+                            <div class="comparison-slider">
+                                <div class="after-image"
+                                    style="background-image: url('https://sevansolutions.com/wp-content/uploads/2020/03/The-Water-Project-Featured-Image_Website-1024x936.png');">
+                                </div>
+                                <div class="before-image"
+                                    style="background-image: url('https://www.unicef.org/zimbabwe/sites/unicef.org.zimbabwe/files/styles/press_release_feature/public/UNI313402.jpg?itok=f91YB2dH');">
+                                </div>
+                                <div class="slider-handle" role="slider" aria-valuenow="50"></div>
+                            </div>
+                            <div class="slider-labels">
+                                <span class="slider-label">Before</span>
+                                <span class="slider-label">After</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Clean Water Impact</h3>
+                        <p class="text-gray-600 mb-6">
+                            Our clean water initiatives have transformed communities by providing access to safe
+                            drinking water,
+                            reducing waterborne diseases, and improving overall health.
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-charity-primary mr-2 mt-0.5" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span><strong>500+</strong> Wells and water systems installed</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-charity-primary mr-2 mt-0.5" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span><strong>70%</strong> Reduction in waterborne illnesses</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-charity-primary mr-2 mt-0.5" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span><strong>1.5M+</strong> People with new access to clean water</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Update the video section to use your existing video files and appropriate content -->
-        <section class="py-20 bg-white">
-            <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto text-center mb-12">
-
-                    <h2 class="text-3xl font-bold mb-6">Prayer Sessions in Their Memory</h2>
-                    <div class="w-24 h-1 bg-charity-primary mx-auto mb-8"></div>
-                    <p class="text-gray-600 text-lg mb-8">
-                        Witness our prayer gatherings honouring our beloved parents through sacred devotion, continuing
-                        their spiritual legacy and seeking blessings for their souls in the hereafter.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Video Card 1 -->
-                    <div
-                        class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2">
-                        <div class="relative aspect-video">
-                            <!-- Using your existing video file -->
-                            <video class="w-full h-full object-cover" poster="videos/video1.mp4" muted loop
-                                preload="metadata">
-                                <source src="videos/video1.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center group-hover:bg-opacity-30 transition-all duration-300">
-                                <button
-                                    class="play-btn w-16 h-16 rounded-full bg-white bg-opacity-80 text-charity-primary flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex justify-between items-center mb-3">
-                                <h3 class="text-xl font-bold text-gray-900">Annual Memorial Prayer</h3>
-                                <span class="text-sm text-gray-500">12:45</span>
-                            </div>
-                            <p class="text-gray-600 mb-4">Our annual gathering for prayers and remembrance, honouring
-                                our
-                                parents' spiritual legacy with community members and religious leaders.</p>
-                            <div class="flex items-center text-sm text-gray-500">
-                                <span class="flex items-center mr-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                    </svg>
-                                    January 2024
-                                </span>
-                                <span class="flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    </svg>
-                                    Central Mosque
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Video Card 2 -->
-                    <div
-                        class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2">
-                        <div class="relative aspect-video">
-                            <!-- Using your existing video file -->
-                            <video class="w-full h-full object-cover" poster="videos/video2.mp4" muted loop
-                                preload="metadata">
-                                <source src="videos/video2.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center group-hover:bg-opacity-30 transition-all duration-300">
-                                <button
-                                    class="play-btn w-16 h-16 rounded-full bg-white bg-opacity-80 text-charity-primary flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex justify-between items-center mb-3">
-                                <h3 class="text-xl font-bold text-gray-900">Dua For The Departed</h3>
-                                <span class="text-sm text-gray-500">8:17</span>
-                            </div>
-                            <p class="text-gray-600 mb-4">Special prayers led by Imam Abdullah, offering supplications
-                                for our parents' souls and seeking Allah's abundant mercy and forgiveness.</p>
-                            <div class="flex items-center text-sm text-gray-500">
-                                <span class="flex items-center mr-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                    </svg>
-                                    March 2024
-                                </span>
-                                <span class="flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    </svg>
-                                    Family Gathering
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Video Card 3 -->
-                    <div
-                        class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2">
-                        <div class="relative aspect-video">
-                            <!-- Using your existing video file -->
-                            <video class="w-full h-full object-cover" poster="videos/video3.mp4" muted loop
-                                preload="metadata">
-                                <source src="videos/video3.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center group-hover:bg-opacity-30 transition-all duration-300">
-                                <button
-                                    class="play-btn w-16 h-16 rounded-full bg-white bg-opacity-80 text-charity-primary flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex justify-between items-center mb-3">
-                                <h3 class="text-xl font-bold text-gray-900">Community Quran Recitation</h3>
-                                <span class="text-sm text-gray-500">15:32</span>
-                            </div>
-                            <p class="text-gray-600 mb-4">Our community gathering for collective Quran recitation,
-                                dedicating the rewards to our parents' souls as ongoing charity (Sadaqah Jariyah).</p>
-                            <div class="flex items-center text-sm text-gray-500">
-                                <span class="flex items-center mr-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                    </svg>
-                                    February 2024
-                                </span>
-                                <span class="flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    </svg>
-                                    Islamic Center
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Video Card 4 -->
-                    <div
-                        class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2">
-                        <div class="relative aspect-video">
-                            <!-- Using your existing video file -->
-                            <video class="w-full h-full object-cover" poster="videos/video4.mp4" muted loop
-                                preload="metadata">
-                                <source src="videos/video4.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center group-hover:bg-opacity-30 transition-all duration-300">
-                                <button
-                                    class="play-btn w-16 h-16 rounded-full bg-white bg-opacity-80 text-charity-primary flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex justify-between items-center mb-3">
-                                <h3 class="text-xl font-bold text-gray-900">Charitable Works Memorial</h3>
-                                <span class="text-sm text-gray-500">10:54</span>
-                            </div>
-                            <p class="text-gray-600 mb-4">See how we honour our parents through acts of charity and
-                                prayer, carrying forward their values of compassion and service to humanity.</p>
-                            <div class="flex items-center text-sm text-gray-500">
-                                <span class="flex items-center mr-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                    </svg>
-                                    April 2024
-                                </span>
-                                <span class="flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    </svg>
-                                    Foundation Headquarters
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text-center mt-10">
-                    <a href="#"
-                        class="inline-block px-8 py-4 bg-charity-primary text-white rounded-md hover:bg-opacity-90 transition-all hover:-translate-y-1 hover:shadow-lg">
-                        View All Prayer Sessions
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Add this JavaScript for video functionality -->
-        <script>
-            // Video play on hover and click functionality
-            document.addEventListener('DOMContentLoaded', function () {
-                const videoCards = document.querySelectorAll('.aspect-video');
-
-                videoCards.forEach(card => {
-                    const video = card.querySelector('video');
-                    const playBtn = card.querySelector('.play-btn');
-                    let isPlaying = false;
-
-                    // Play on hover
-                    card.addEventListener('mouseenter', () => {
-                        if (!isPlaying) {
-                            video.play();
-                        }
-                    });
-
-                    // Pause on mouse leave
-                    card.addEventListener('mouseleave', () => {
-                        if (!isPlaying) {
-                            video.pause();
-                            video.currentTime = 0;
-                        }
-                    });
-
-                    // Toggle play/pause on click
-                    playBtn.addEventListener('click', () => {
-                        if (video.paused) {
-                            video.play();
-                            isPlaying = true;
-                            playBtn.innerHTML = `
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            `;
-                        } else {
-                            video.pause();
-                            isPlaying = false;
-                            playBtn.innerHTML = `
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            `;
-                        }
-                    });
-
-                    // Reset when video ends
-                    video.addEventListener('ended', () => {
-                        isPlaying = false;
-                        playBtn.innerHTML = `
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        `;
-                    });
-                });
-            });
-        </script>
 
         <!-- Our Initiatives -->
         <section class="py-20 bg-gray-50">
@@ -1515,60 +1005,58 @@
         <section class="py-20 bg-white">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-center mb-12">Success Stories</h2>
-                <!-- Success Stories Section with local image paths -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     <!-- Story Card 1 -->
                     <div class="group">
                         <div class="relative overflow-hidden rounded-lg mb-4">
-                            <img src="images/water-well-project.jpg" alt="Water Well Construction"
-                                class="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105">
+                            <img src="https://africanmediaagency.com/wp-content/uploads/2022/10/PepsiCo-Foundations_africanmediagency-1024x519.png"
+                                alt="Success Story"
+                                class="regular-content w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105">
+                            <img src="https://africanmediaagency.com/wp-content/uploads/2022/10/PepsiCo-Foundations_africanmediagency-1024x519.png"
+                                alt="Success Story"
+                                class="preview-content hidden w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105">
                         </div>
                         <div>
-                            <span class="text-charity-primary text-sm font-medium">Sadaqah Jariyah</span>
+                            <span class="text-charity-primary text-sm font-medium">Community Spotlight</span>
                             <h3 class="text-xl font-bold mt-2 group-hover:text-charity-primary">
-                                Water Well Construction in Memory
+                                <span class="regular-content">Transforming Lives in Rural India</span>
+                                <span class="preview-content hidden">Clean Water Transforms Village Life</span>
                             </h3>
                         </div>
                     </div>
-
                     <!-- Story Card 2 -->
                     <div class="group">
                         <div class="relative overflow-hidden rounded-lg mb-4">
-                            <img src="images/education-program.png" alt="Orphan Support Program"
-                                class="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105">
+                            <img src="https://africanmediaagency.com/wp-content/uploads/2022/10/PepsiCo-Foundations_africanmediagency-1024x519.png"
+                                alt="Success Story"
+                                class="regular-content w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105">
+                            <img src="https://africanmediaagency.com/wp-content/uploads/2022/10/PepsiCo-Foundations_africanmediagency-1024x519.png"
+                                alt="Success Story"
+                                class="preview-content hidden w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105">
                         </div>
                         <div>
-                            <span class="text-charity-primary text-sm font-medium">Orphan Care</span>
+                            <span class="text-charity-primary text-sm font-medium">Education Impact</span>
                             <h3 class="text-xl font-bold mt-2 group-hover:text-charity-primary">
-                                Supporting Children's Education
+                                <span class="regular-content">Building Schools, Shaping Futures</span>
+                                <span class="preview-content hidden">New School Opens Doors to 500 Children</span>
                             </h3>
                         </div>
                     </div>
-
                     <!-- Story Card 3 -->
                     <div class="group">
                         <div class="relative overflow-hidden rounded-lg mb-4">
-                            <img src="images/economic-empowerment.jpg" alt="Community Development"
-                                class="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105">
+                            <img src="https://africanmediaagency.com/wp-content/uploads/2022/10/PepsiCo-Foundations_africanmediagency-1024x519.png"
+                                alt="Success Story"
+                                class="regular-content w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105">
+                            <img src="https://africanmediaagency.com/wp-content/uploads/2022/10/PepsiCo-Foundations_africanmediagency-1024x519.png"
+                                alt="Success Story"
+                                class="preview-content hidden w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105">
                         </div>
                         <div>
-                            <span class="text-charity-primary text-sm font-medium">Economic Empowerment</span>
+                            <span class="text-charity-primary text-sm font-medium">Healthcare Heroes</span>
                             <h3 class="text-xl font-bold mt-2 group-hover:text-charity-primary">
-                                Enabling Self-Sufficiency
-                            </h3>
-                        </div>
-                    </div>
-
-                    <!-- Story Card 4 - Toilet Blocks -->
-                    <div class="group">
-                        <div class="relative overflow-hidden rounded-lg mb-4">
-                            <img src="images/toilet-blocks.jpg" alt="Sanitation Project"
-                                class="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-105">
-                        </div>
-                        <div>
-                            <span class="text-charity-primary text-sm font-medium">Sanitation Projects</span>
-                            <h3 class="text-xl font-bold mt-2 group-hover:text-charity-primary">
-                                Building 6 Blocks of Toilets
+                                <span class="regular-content">Mobile Clinics Reach Remote Areas</span>
+                                <span class="preview-content hidden">10,000 Patients Treated in Rural Outreach</span>
                             </h3>
                         </div>
                     </div>
@@ -1583,7 +1071,7 @@
                     <h2 class="text-3xl font-bold mb-6">Get Involved</h2>
                     <div class="w-24 h-1 bg-charity-primary mx-auto mb-8"></div>
                     <p class="text-gray-600 text-lg mb-8">
-                        Join us in honouring our parents' legacy by helping those in need. Your contribution, no matter
+                        Join us in honoring our parents' legacy by helping those in need. Your contribution, no matter
                         the form, continues their tradition of generosity and service.
                     </p>
                 </div>
@@ -1730,7 +1218,7 @@
                         <div>
                             <h3 class="text-2xl font-bold mb-4">Continue Their Legacy of Giving</h3>
                             <p class="text-gray-600 mb-6">
-                                Join us in honouring our parents' memory through acts of kindness and charity. Every
+                                Join us in honoring our parents' memory through acts of kindness and charity. Every
                                 contribution helps sustain their legacy by bringing hope and support to those in need,
                                 embodying the beautiful tradition of ongoing charity (Sadaqah Jariyah).
                             </p>
@@ -1758,8 +1246,7 @@
         <section class="py-20 bg-charity-dark text-white">
             <div class="container mx-auto px-4 text-center">
                 <h2 class="text-3xl font-bold mb-6">Join Our Community</h2>
-                <p class="max-w-2xl mx-auto mb-8">Stay connected with our work and learn how we're honouring our
-                    parents'
+                <p class="max-w-2xl mx-auto mb-8">Stay connected with our work and learn how we're honoring our parents'
                     legacy through service to others. Receive updates on our initiatives and ways to contribute.</p>
                 <form class="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
                     <input type="email" placeholder="Enter your email"
@@ -2134,7 +1621,7 @@
                     <div class="mb-4 md:mb-0 pr-4">
                         <h4 class="font-bold text-gray-800 mb-2">We Value Your Privacy</h4>
                         <p class="text-sm text-gray-600">
-                            This website uses cookies to enhance your experience and analyse our traffic.
+                            This website uses cookies to enhance your experience and analyze our traffic.
                             By clicking "Accept All", you consent to our use of cookies.
                             <a href="#" class="text-charity-primary hover:underline">Learn more</a> about how we use
                             cookies.
@@ -2313,137 +1800,6 @@
                         cookiePreferences.classList.add('hidden');
                     }
                 });
-            });
-        </script>
-
-        <script>
-            // Updated mobile menu script with better position handling
-            document.addEventListener('DOMContentLoaded', function () {
-                const nav = document.querySelector('nav');
-                const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-                const mobileMenu = document.getElementById('mobile-menu');
-
-                // Improved mobile menu positioning
-                function updateMobileMenuPosition() {
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        const navRect = nav.getBoundingClientRect();
-                        mobileMenu.style.top = `${navRect.bottom}px`;
-
-                        // Adjust for very small screens
-                        if (window.innerWidth <= 640) {
-                            mobileMenu.style.width = '100%';
-                            mobileMenu.style.left = '0';
-                            mobileMenu.style.right = '0';
-                            mobileMenu.style.borderRadius = '0';
-                        } else {
-                            // Match navbar width and position on tablets
-                            mobileMenu.style.width = nav.style.width || `${navRect.width}px`;
-                            mobileMenu.style.left = nav.style.left || `${navRect.left}px`;
-                            mobileMenu.style.right = nav.style.right || `${navRect.right}px`;
-                        }
-                    }
-                }
-
-                // Toggle mobile menu with improved positioning
-                function toggleMobileMenu(e) {
-                    if (e) e.preventDefault();
-                    mobileMenu.classList.toggle('hidden');
-
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        updateMobileMenuPosition();
-                    }
-                }
-
-                // Scroll handler with mobile optimizations
-                function handleScroll() {
-                    if (window.scrollY > 50) {
-                        nav.classList.add('nav-blur');
-                        nav.classList.add('nav-scrolled');
-
-                        // Adjust for mobile when scrolled
-                        if (window.innerWidth <= 640) {
-                            nav.style.width = '100%';
-                            nav.style.margin = '0';
-                            nav.style.borderRadius = '0';
-                        }
-                    } else {
-                        nav.classList.remove('nav-blur');
-                        nav.classList.remove('nav-scrolled');
-                    }
-
-                    // Update mobile menu position if open
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        updateMobileMenuPosition();
-                    }
-                }
-
-                // Event Listeners
-                window.addEventListener('scroll', handleScroll);
-                window.addEventListener('resize', updateMobileMenuPosition);
-
-                if (mobileMenuBtn) {
-                    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-                }
-
-                // Close menu when clicking outside with improved touch handling
-                document.addEventListener('click', (e) => {
-                    if (mobileMenu &&
-                        !mobileMenuBtn?.contains(e.target) &&
-                        !mobileMenu.contains(e.target)) {
-                        mobileMenu.classList.add('hidden');
-                    }
-                });
-
-                // Better touch handling for sliders
-                if (document.querySelector('.slider-handle')) {
-                    const sliderHandle = document.querySelector('.slider-handle');
-                    const sliderWrapper = document.querySelector('.comparison-slider-wrapper');
-
-                    // Add specific touch handling for mobile devices
-                    sliderHandle.addEventListener('touchstart', function (e) {
-                        e.preventDefault(); // Prevent default touch behavior
-                        isActive = true;
-                    }, { passive: false });
-
-                    window.addEventListener('touchend', function () {
-                        isActive = false;
-                    });
-
-                    window.addEventListener('touchmove', function (e) {
-                        if (!isActive) return;
-                        const touch = e.touches[0];
-                        const rect = sliderWrapper.getBoundingClientRect();
-                        const position = ((touch.clientX - rect.left) / rect.width) * 100;
-
-                        // Restrict movement between 5% and 95%
-                        const clampedPosition = Math.max(5, Math.min(position, 95));
-
-                        // Update positions
-                        sliderHandle.style.setProperty('--position', clampedPosition + '%');
-                        document.querySelector('.before-image').style.setProperty('--position', clampedPosition + '%');
-                    }, { passive: true });
-                }
-
-                // Improve cookie consent on mobile
-                const cookieConsent = document.getElementById('cookie-consent');
-                if (cookieConsent) {
-                    // Adjust positioning based on screen size
-                    function updateCookieConsentLayout() {
-                        if (window.innerWidth <= 640) {
-                            cookieConsent.querySelector('.flex').classList.add('flex-col');
-                            cookieConsent.querySelector('.flex').classList.remove('md:flex-row');
-                        } else {
-                            cookieConsent.querySelector('.flex').classList.remove('flex-col');
-                            cookieConsent.querySelector('.flex').classList.add('md:flex-row');
-                        }
-                    }
-
-                    window.addEventListener('resize', updateCookieConsentLayout);
-                    updateCookieConsentLayout(); // Run once on load
-                }
-
-                // Initial calls
-                handleScroll();
             });
         </script>
 
